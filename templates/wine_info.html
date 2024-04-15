@@ -1,9 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{{ wine['wine_name'] }}</title>
-</head>
-<body>
-</body>
-</html>
+{% extends "layout.html" %}
+{% block content %}
+
+    <h1 class="h1">{{ wine['wine_name'] }}</h1>
+    <a href={{ "/learn/" + next_id|string }}>
+        <button id="next-btn" class="btn btn-primary">{{ wine['next_wine'] }} <i class="bi bi-arrow-right"></i></button>
+    </a>
+    <body>
+    </body>
+{% endblock %}

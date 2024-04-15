@@ -20,6 +20,15 @@ def load_wines():
     return data
 
 
+def get_next_wine_id(cur_wine_id: int) -> int:
+    """
+    Wrap around the wine index if necessary.
+    """
+    if cur_wine_id >= len(wines):
+        return 1
+    return cur_wine_id + 1
+
+
 # The variable wines holds the wine dict
 wines = load_wines()
 
@@ -31,9 +40,12 @@ app = Flask(__name__)
 def home():
     return render_template('home.html')
 
+
 @app.route('/learn/<wine_num>')
 def learn(wine_num):
     wine_to_render = wines[wine_num]
-    return render_template('wine_info.html', wine=wine_to_render)
+    return render_template('wine_info.html', wine=wine_to_render, next_id=get_next_wine_id(int(wine_num)))
+
+
 if __name__ == '__main__':
     app.run(debug=True)
