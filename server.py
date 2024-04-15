@@ -31,6 +31,9 @@ app = Flask(__name__)
 def home():
     return render_template('home.html')
 
-
+@app.route('/learn/<wine_num>')
+def learn(wine_num):
+    wine_to_render = wines[wine_num]
+    return render_template('wine_info.html', wine=wine_to_render)
 if __name__ == '__main__':
     app.run(debug=True)
