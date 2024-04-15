@@ -20,13 +20,13 @@ def load_wines():
     return data
 
 
-def get_next_wine_id(cur_wine_id: int) -> int:
+def get_next_wine_id(cur_wine_id: int) -> str:
     """
     Wrap around the wine index if necessary.
     """
     if cur_wine_id >= len(wines):
-        return 1
-    return cur_wine_id + 1
+        return "1"
+    return str(cur_wine_id + 1)
 
 
 # The variable wines holds the wine dict
@@ -39,7 +39,6 @@ app = Flask(__name__)
 @app.route('/')
 def home():
     return render_template('home.html')
-
 
 @app.route('/learn/<wine_num>')
 def learn(wine_num):
