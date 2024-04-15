@@ -1,0 +1,32 @@
+
+.navbar {
+    display: flex;
+    justify-content: space-between; /* This spaces out the two parts of the navbar */
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px; /* Padding around the entire navbar */
+    font-family: "Gill Sans";
+}
+
+.gill-sans-font {
+    font-family: "Gill Sans";
+}
+
+.content-container {
+    padding: 50px;
+    font-size: large;
+    line-height: 2;
+}
+
+.next-button{
+    background-color: lightsteelblue;
+    border: none;
+    color: black;
+    float: right;
+}
+
+.next-button:hover {
+    background-color: lightblue;
+}
+
