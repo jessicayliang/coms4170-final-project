@@ -13,10 +13,23 @@
     font-family: "Gill Sans";
 }
 
+.home-description {
+    font-family: Palatino;
+    font-style: italic;
+    font-size: xxx-large;
+    align-items: center;
+    justify-content: center;
+}
+
 .content-container {
     padding: 50px;
     font-size: large;
     line-height: 2;
+
+}
+
+.navbar-container{
+
 }
 
 .next-button{

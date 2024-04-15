@@ -20,27 +20,45 @@
 </head>
 <body class="backgroundcolor">
 
-<nav class="row navbar navbar-expand-lg navbar-light bg-light">
-    <div class="col-6">-</div>
-{#    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">#}
-    <div class="col-6">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg">
-            <li class="nav-item active col">
-                <a class="nav-link" href="#">home</a>
-            </li>
-            <li class="nav-item col">
-                <a class="nav-link" href="/learn/1">wine profile</a>
-            </li>
-            <li class="nav-item col">
-                <a class="nav-link" href="/quiz/1">quiz</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-
-<div class="container content">
-    {% block content %}
-    {% endblock %}
+<div class="navbar-container">
+    <nav class="row navbar navbar-expand-lg navbar-light bg-light">
+        <div class="col-5">-</div>
+        {#    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">#}
+        <div class="col-7 text-center">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg">
+                <li class="nav-item active col">
+                    <a class="nav-link" href="#">home</a>
+                </li>
+                <li class="nav-item col">
+                    <a class="nav-link" href="/learn/1">wine profile</a>
+                </li>
+                <li class="nav-item col">
+                    <a class="nav-link" href="/quiz/1">quiz</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
 </div>
+
+<div class="content-container">
+    <div class="row">
+        <div class="col-5">
+
+        </div>
+        <div class="col-7 text-center">
+            <div class="home-description">
+                Know what you're drinking
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3 text-center gill-sans-font">
+            Pour Decisions
+        </div>
+    </div>
+
+</div>
+
+
 </body>
 </html>
