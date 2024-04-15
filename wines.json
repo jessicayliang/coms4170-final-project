@@ -1,0 +1,85 @@
+{
+  "Pinot Noir": {
+    "description": "Pinot Noir, meaning \"Pine black\" in French, is a red-wine grape variety of the species Vitis vinifera. The name may also refer to wines created predominantly from pinot noir grapes.",
+    "image": "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwinestore.airnewzealand.co.nz%2Fimages%2Fbottles%2F95906.png&f=1&nofb=1&ipt=a5cbf37cca41d181a70db232c5e53a4e244efcd25c15cfa9bea1193eb416bb8d&ipo=images",
+    "pairs_with": [
+      "poultry",
+      "pork",
+      "salmon"
+    ],
+    "next_wine": "Pinot Grigio"
+  },
+  "Pinot Grigio": {
+    "description": "Pinot Grigio, also known as Pinot Gris, is a white wine grape variety of the species Vitis vinifera. It's known for producing crisp, dry white wines.",
+    "pairs_with": [
+      "seafood",
+      "chicken",
+      "pasta with cream sauce"
+    ],
+    "next_wine": "Rose"
+  },
+  "Rose": {
+    "description": "Rose wine, often known for its pink hue, is made from a wide variety of grapes and can be found all around the world. These wines are appreciated for their versatility and refreshing flavors.",
+    "pairs_with": [
+      "salads",
+      "light pastas",
+      "seafood"
+    ],
+    "next_wine": "Cabernet"
+  },
+  "Cabernet": {
+    "description": "Cabernet Sauvignon is one of the world's most renowned red wine grape varieties from the Vitis vinifera species. It is known for its depth of flavor, complex tannins and longevity.",
+    "pairs_with": [
+      "red meat",
+      "hearty pasta",
+      "aged cheeses"
+    ],
+    "next_wine": "Moscato"
+  },
+  "Moscato": {
+    "description": "Moscato, made from the Muscat grape, is a sweet white wine known for its fragrant and aromatic bouquet, often showcasing notes of orange blossom and honeysuckle.",
+    "pairs_with": [
+      "desserts",
+      "spicy Asian cuisine",
+      "blue cheese"
+    ],
+    "next_wine": "Sauvignon Blanc"
+  },
+  "Sauvignon Blanc": {
+    "description": "Sauvignon Blanc is a green-skinned grape variety that originates from the Bordeaux region of France. The wine is usually consumed young and known for its fresh, crisp flavors.",
+    "pairs_with": [
+      "chicken",
+      "seafood",
+      "herb-based dishes"
+    ],
+    "next_wine": "Champagne"
+  },
+  "Champagne": {
+    "description": "Champagne, a sparkling wine from the Champagne region of France, is made primarily from Chardonnay, Pinot Noir, and Pinot Meunier grapes. It's celebrated worldwide for its quality and tradition.",
+    "pairs_with": [
+      "appetizers",
+      "sushi",
+      "fried foods"
+    ],
+    "next_wine": "Malbec"
+  },
+  "Malbec": {
+    "description": "Malbec is a purple grape variety used in making red wine, which originated in France but is now mainly produced in Argentina. This wine is known for its dark, intense color and robust tannins.",
+    "pairs_with": [
+      "steak",
+      "pork",
+      "grilled sausages"
+    ],
+    "next_wine": "Shiraz"
+  },
+  "Shiraz": {
+    "description": "Shiraz, or Syrah, is a dark-skinned grape variety grown throughout the world and used primarily to produce powerful red wines. It features flavors of blackberry, mint and black pepper.",
+    "pairs_with": [
+      "beef",
+      "lamb",
+      "wild game"
+    ],
+    "next_wine": "Pinot Noir"
+  }
+}
+
