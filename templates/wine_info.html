@@ -1,10 +1,47 @@
 {% extends "layout.html" %}
 {% block content %}
 
-    <h1 class="h1">{{ wine['wine_name'] }}</h1>
-    <a href={{ "/learn/" + next_id }}>
-        <button id="next-btn" class="btn btn-primary">{{ wine['next_wine'] }} <i class="bi bi-arrow-right"></i></button>
-    </a>
-    <body>
-    </body>
+    <div class="content-container">
+        <div class="row">
+            <div class="col-2">image here</div>
+            <div class="col-10">
+                <h1 class="h1">{{ wine['wine_name'] }}</h1>
+                <body>
+                    <p>{{ wine['description'] }}</p>
+                    <h4>
+                        Pair with:
+                    </h4>
+
+                    <div class="row">
+                        <div class="col-2">
+                            <div>img</div>
+                            poultry
+                        </div>
+                        <div class="col-2">
+                            <div>img</div>
+                            pork
+                        </div>
+                        <div class="col-2">
+                            <div>img</div>
+                            salmon
+                        </div>
+                        <div class="col-6">
+                            <a href={{ "/learn/" + next_id }}>
+                                <button id="next-btn" class="btn btn-primary next-button">Next <i class="bi bi-arrow-right"></i></button>
+                            </a>
+                        </div>
+
+                    </div>
+                </body>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
 {% endblock %}

@@ -1,6 +1,46 @@
-{% extends "layout.html" %}
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="data:,">
 
-{% block content %}
+    <!-- jquery -->
+    <script src="http://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <!-- icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <title>Wine & food</title>
+</head>
+<body class="backgroundcolor">
 
-{% endblock %}
+<nav class="row navbar navbar-expand-lg navbar-light bg-light">
+    <div class="col-6">-</div>
+{#    <div class="collapse navbar-collapse" id="navbarTogglerDemo02">#}
+    <div class="col-6">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg">
+            <li class="nav-item active col">
+                <a class="nav-link" href="#">home</a>
+            </li>
+            <li class="nav-item col">
+                <a class="nav-link" href="/learn/1">wine profile</a>
+            </li>
+            <li class="nav-item col">
+                <a class="nav-link" href="/quiz/1">quiz</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<div class="container content">
+    {% block content %}
+    {% endblock %}
+</div>
+</body>
+</html>
