@@ -21,15 +21,31 @@
                             {{ k }}
                         </div>
                     {% endfor %}
-                        <div class="col-6">
-                            <a href={{ "/learn/" + next_id }}>
-                                <button id="next-btn" class="btn btn-primary next-button">Next <i class="bi bi-arrow-right"></i></button>
-                            </a>
-                        </div>
+
                     </div>
                 </body>
-
-
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
+                {% set converted_prev_id = prev_id | int %}
+                {% if converted_prev_id > 0 %}
+                    <a href={{ "/learn/" + prev_id }}>
+                        <button id="back-btn" class="btn btn-primary back-button"><i class="bi bi-arrow-left"></i> Back</button>
+                    </a>
+                {% endif %}
+            </div>
+            <div class="col-6">
+                {% set converted_next_id = next_id | int %}
+                {% if converted_next_id < 11 %}
+                    <a href={{ "/learn/" + next_id }}>
+                        <button id="next-btn" class="btn btn-primary next-button">Next <i class="bi bi-arrow-right"></i></button>
+                    </a>
+                {% else %}
+                    <a href={{ "/quiz/" + '1' }}>
+                        <button id="finish-btn" class="btn btn-primary next-button">Quiz</button>
+                    </a>
+                {% endif %}
             </div>
         </div>
     </div>
