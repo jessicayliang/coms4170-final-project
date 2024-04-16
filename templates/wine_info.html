@@ -13,24 +13,17 @@
                     </h4>
 
                     <div class="row">
+                    {% for k, v in wine.pairs_with.items() %}
                         <div class="col-2">
-                            <div>img</div>
-                            poultry
+                            <div>img{{ v }}</div>
+                            {{ k }}
                         </div>
-                        <div class="col-2">
-                            <div>img</div>
-                            pork
-                        </div>
-                        <div class="col-2">
-                            <div>img</div>
-                            salmon
-                        </div>
+                    {% endfor %}
                         <div class="col-6">
                             <a href={{ "/learn/" + next_id }}>
                                 <button id="next-btn" class="btn btn-primary next-button">Next <i class="bi bi-arrow-right"></i></button>
                             </a>
                         </div>
-
                     </div>
                 </body>
 
