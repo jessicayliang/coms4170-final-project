@@ -3,21 +3,23 @@
 */
 
 $(document).ready(() => {
-    console.log("Button exists:", $('#next-btn').length > 0);
+    console.log("Seen wines:")
+    $.ajax({
+        url: '/getwines',
+        type: "GET",
+        contentType: 'application/json',
+        success: function (response) {
+            Object.keys(response).forEach(function (key) {
+                let wine = response[key];
+                if (wine.seen) {
+                    console.log(wine.wine_name);
+                }
 
-    $("#next-btn").click(() => {
-        console.log("click")
-        $.ajax({
-            url: '/getwines',
-            type: "GET",
-            contentType: 'application/json',
-            success: function (response) {
-                console.log(response);
-            },
-            error: function (error) {
-                console.error("Error:", error);
-            }
-        });
+            });
+        },
+        error: function (error) {
+            console.error("Error:", error);
+        }
     });
 
 
