@@ -9,7 +9,7 @@ from flask import Response, request, jsonify
 from markupsafe import Markup
 
 
-def load_wines():
+def load_wines() -> object:
     """
     Load wines from the JSON file.
     :return: a python dictionary mapping wine name to image, pairing list, description, and next wine.
