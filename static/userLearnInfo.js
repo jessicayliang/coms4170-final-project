@@ -9,9 +9,9 @@ $(document).ready(() => {
         learningStarted = Date.now();
         logStartTime();
     })
-    $("#next-btn").click(() => {
-        currentWine
-    })
+    // $("#next-btn").click(() =>
+    //     currentWine
+    // })
 })
 
 function logStartTime() {
@@ -22,8 +22,16 @@ function logStartTime() {
         url: '/record/learn', type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({'time_started': learningStarted}),
-        success: function (_) {
+        success: function (response) {
             console.log("saved the time:", learningStarted);
+            console.log(response)
+            // Check if the server responded with a redirect URL
+            if (response.redirect) {
+                // Redirect the browser to the specified URL
+                window.location.href = response.redirect;
+            } else {
+                console.log("No redirection needed.");
+            }
         },
         error: function (_) {
             console.error(this.error)
@@ -39,8 +47,8 @@ function sendWineSeen(wine_name) {
         url: '/record/learn', type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({'wine_visited': wine_name}),
-        success: function (_) {
-            console.log("saved the time:", learningStarted);
+        success: function (response) {
+            console.log(response);
         },
         error: function (_) {
             console.error(this.error)

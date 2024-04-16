@@ -72,8 +72,9 @@ def record(section: str):
         elif 'time_started' in json_data:
             user_learn_info['time_started'] = json_data['time_started']
 
-        return jsonify(user_learn_info)
+        return jsonify({'redirect': url_for('learn', wine_num='1')})
 
+    return jsonify({'status': 'No action performed'})
 
 if __name__ == '__main__':
     app.run(debug=True, port=3200)
