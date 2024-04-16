@@ -11,47 +11,47 @@
   },
   "2": {
     "wine_name": "Pinot Grigio",
-    "description": "Pinot Grigio, also known as Pinot Gris, is a white wine grape variety of the species Vitis vinifera. It's known for producing crisp, dry white wines.",
+    "description": "Pinot Grigio, also known as Pinot Gris, is a wine known equally for its crisp green apple acidity as it is for its mouthcoating sweet honey flavor. Low alcohol and zesty acid make this wine as perfect for pairing with seafood as it is with a good book on the patio. ",
     "pairs_with": [
       "seafood",
-      "chicken",
-      "pasta with cream sauce"
+      "spicy chicken",
+      "risotto"
     ],
     "next_wine": "Rose"
   },
   "3": {
     "wine_name": "Rose",
-    "description": "Rose wine, often known for its pink hue, is made from a wide variety of grapes and can be found all around the world. These wines are appreciated for their versatility and refreshing flavors.",
+    "description": "Rose wine, known for its pink hue, is one of the most versatile styles of wine around. Rosés are made from red wine grapes, but they’re lighter in flavors and tannins than red wines. Plus, Rosés are served chilled, and they’re crisp and refreshing like lighter white wines.",
     "pairs_with": [
-      "salads",
-      "light pastas",
-      "seafood"
+      "pork",
+      "shellfish",
+      "tomato"
     ],
     "next_wine": "Cabernet"
   },
   "4": {
     "wine_name": "Cabernet",
-    "description": "Cabernet Sauvignon is one of the world's most renowned red wine grape varieties from the Vitis vinifera species. It is known for its depth of flavor, complex tannins and longevity.",
+    "description": "Cabernet Sauvignon is one of the world's most renowned red wine grape varieties from the Vitis vinifera species. It is full-bodied, fruity, has balanced acidity, and plenty of tannins that make it age-worthy.",
     "pairs_with": [
       "red meat",
-      "hearty pasta",
-      "aged cheeses"
+      "pizza",
+      "mushroom risotto"
     ],
     "next_wine": "Moscato"
   },
   "5": {
     "wine_name": "Moscato",
-    "description": "Moscato, made from the Muscat grape, is a sweet white wine known for its fragrant and aromatic bouquet, often showcasing notes of orange blossom and honeysuckle.",
+    "description": "Moscato, made from the Muscat grape, is a sweet white wine known for its fragrant and aromatic bouquet, often showcasing notes of orange blossom and honeysuckle. Its sweeter styles can even taste like peach juice, honey, and orange syrup. That sweetness will play a big role in what foods pair best.",
     "pairs_with": [
       "desserts",
-      "spicy Asian cuisine",
-      "blue cheese"
+      "classic italian pizza",
+      "spicy Asian cuisines"
     ],
     "next_wine": "Sauvignon Blanc"
   },
   "6": {
     "wine_name": "Sauvignon Blanc",
-    "description": "Sauvignon Blanc is a green-skinned grape variety that originates from the Bordeaux region of France. The wine is usually consumed young and known for its fresh, crisp flavors.",
+    "description": "Sauvignon Blanc is a green-skinned grape variety that originates from the Bordeaux region of France. The wine is usually consumed young and known for its fresh, crisp flavors. It's best with lighter dishes, like white meats or spring vegetables.",
     "pairs_with": [
       "chicken",
       "seafood",
@@ -63,9 +63,9 @@
     "wine_name": "Champagne",
     "description": "Champagne, a sparkling wine from the Champagne region of France, is made primarily from Chardonnay, Pinot Noir, and Pinot Meunier grapes. It's celebrated worldwide for its quality and tradition.",
     "pairs_with": [
-      "appetizers",
-      "sushi",
-      "fried foods"
+      "steak",
+      "fried chicken",
+      "fried potatoes"
     ],
     "next_wine": "Malbec"
   },
@@ -74,8 +74,8 @@
     "description": "Malbec is a purple grape variety used in making red wine, which originated in France but is now mainly produced in Argentina. This wine is known for its dark, intense color and robust tannins.",
     "pairs_with": [
       "steak",
-      "pork",
-      "grilled sausages"
+      "blue cheese",
+      "pork"
     ],
     "next_wine": "Shiraz"
   },
@@ -83,9 +83,9 @@
     "wine_name": "Shiraz",
     "description": "Shiraz, or Syrah, is a dark-skinned grape variety grown throughout the world and used primarily to produce powerful red wines. It features flavors of blackberry, mint and black pepper.",
     "pairs_with": [
-      "beef",
+      "beef brisket",
       "lamb",
-      "wild game"
+      "chili"
     ],
     "next_wine": "Pinot Noir"
   }
