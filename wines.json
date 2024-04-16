@@ -3,99 +3,99 @@
     "wine_name": "Pinot Noir",
     "description": "Pinot Noir, meaning 'Pine black' in French, is a red-wine grape variety of the species Vitis vinifera. The name may also refer to wines created predominantly from pinot noir grapes.",
     "pairs_with": {
-      "poultry": "",
-      "pork": "",
-      "salmon": ""
+      "poultry": "https://static01.nyt.com/images/2023/01/29/multimedia/29EAT-crispy-smashed-chicken-breasts-with-gin-and-sage-wmtk/29EAT-crispy-smashed-chicken-breasts-with-gin-and-sage-wmtk-master768.jpg?w=1280&q=75",
+      "pork": "https://static01.nyt.com/images/2023/04/11/multimedia/AS-Harissa-Honey-Pork-Tenderloin-bjfm/AS-Harissa-Honey-Pork-Tenderloin-bjfm-master768.jpg?w=1280&q=75",
+      "salmon": "https://static01.nyt.com/images/2024/01/05/multimedia/SSE-horseredish-salmon-hcbf/SSE-horseredish-salmon-hcbf-master768.jpg?w=1280&q=75"
     },
-    "wine_image": "",
+    "wine_img": "",
     "next_wine": "Pinot Grigio"
   },
   "2": {
     "wine_name": "Pinot Grigio",
     "description": "Pinot Grigio, also known as Pinot Gris, is a wine known equally for its crisp green apple acidity as it is for its mouthcoating sweet honey flavor. Low alcohol and zesty acid make this wine as perfect for pairing with seafood as it is with a good book on the patio. ",
     "pairs_with": {
-      "seafood": "",
-      "spicy chicken": "",
-      "risotto": ""
+      "seafood": "https://static01.nyt.com/images/2024/02/28/multimedia/LH-seafood-boil-gktl/LH-seafood-boil-gktl-master768.jpg?w=1280&q=75",
+      "spicy chicken": "https://static01.nyt.com/images/2021/10/19/dining/as-glazed-chicken/as-glazed-chicken-master768.jpg?w=1280&q=75",
+      "risotto": "https://static01.nyt.com/images/2024/01/10/multimedia/10Risotto-gcmz/10Risotto-gcmz-master768.jpg?w=1280&q=75"
     },
-    "wine_image": "",
+    "wine_img": "",
     "next_wine": "Rose"
   },
   "3": {
     "wine_name": "Rose",
     "description": "Rose wine, known for its pink hue, is one of the most versatile styles of wine around. Rosés are made from red wine grapes, but they’re lighter in flavors and tannins than red wines. Plus, Rosés are served chilled, and they’re crisp and refreshing like lighter white wines.",
     "pairs_with": {
-      "pork": "",
-      "shellfish": "",
-      "tomato": ""
+      "pork": "https://static01.nyt.com/images/2023/04/11/multimedia/AS-Harissa-Honey-Pork-Tenderloin-bjfm/AS-Harissa-Honey-Pork-Tenderloin-bjfm-master768.jpg?w=1280&q=75",
+      "shellfish": "https://static01.nyt.com/images/2017/05/16/dining/16COOKING-BITTMAN-BOUILLABAISSE/16COOKING-BITTMAN-BOUILLABAISSE-master768.jpg?w=1280&q=75",
+      "tomato": "https://static01.nyt.com/images/2021/06/09/dining/07watermelonrex/merlin_188346429_09300964-0f19-44d9-b4fe-65f4595fa7ef-articleLarge.jpg"
     },
-    "wine_image": "",
+    "wine_img": "",
     "next_wine": "Cabernet"
   },
   "4": {
     "wine_name": "Cabernet",
     "description": "Cabernet Sauvignon is one of the world's most renowned red wine grape varieties from the Vitis vinifera species. It is full-bodied, fruity, has balanced acidity, and plenty of tannins that make it age-worthy.",
     "pairs_with": {
-      "red meat": "",
-      "pizza": "",
-      "mushroom risotto": ""
+      "red meat": "https://static01.nyt.com/images/2022/05/18/dining/14steakrex/18steakrex-articleLarge.jpg",
+      "pizza": "https://static01.nyt.com/images/2024/02/07/multimedia/ND-detroit-style-pizza-twpb/ND-detroit-style-pizza-twpb-master768.jpg?w=1280&q=75",
+      "mushroom risotto": "https://static01.nyt.com/images/2024/01/10/multimedia/10Risotto-gcmz/10Risotto-gcmz-master768.jpg?w=1280&q=75"
     },
-    "wine_image": "",
+    "wine_img": "",
     "next_wine": "Moscato"
   },
   "5": {
     "wine_name": "Moscato",
     "description": "Moscato, made from the Muscat grape, is a sweet white wine known for its fragrant and aromatic bouquet, often showcasing notes of orange blossom and honeysuckle. Its sweeter styles can even taste like peach juice, honey, and orange syrup. That sweetness will play a big role in what foods pair best.",
     "pairs_with": {
-      "desserts": "",
-      "classic italian pizza": "",
-      "spicy Asian cuisines": ""
+      "desserts": "https://static01.nyt.com/images/2023/10/27/multimedia/27cakerex-plzm/27cakerex-plzm-articleLarge.jpg",
+      "classic italian pizza": "https://static01.nyt.com/images/2014/04/09/dining/09JPPIZZA2/09JPPIZZA2-master768-v2.jpg?w=1280&q=75",
+      "spicy Asian cuisines": "https://static01.nyt.com/images/2016/08/22/dining/22COOKING-KOREAN-RICE-CAKES2/22COOKING-KOREAN-RICE-CAKES2-master768.jpg?w=1280&q=75"
     },
-    "wine_image": "",
+    "wine_img": "",
     "next_wine": "Sauvignon Blanc"
   },
   "6": {
     "wine_name": "Sauvignon Blanc",
     "description": "Sauvignon Blanc is a green-skinned grape variety that originates from the Bordeaux region of France. The wine is usually consumed young and known for its fresh, crisp flavors. It's best with lighter dishes, like white meats or spring vegetables.",
     "pairs_with": {
-      "chicken": "",
-      "seafood": "",
-      "herb-based dishes": ""
+      "chicken": "https://static01.nyt.com/images/2023/01/29/multimedia/29EAT-crispy-smashed-chicken-breasts-with-gin-and-sage-wmtk/29EAT-crispy-smashed-chicken-breasts-with-gin-and-sage-wmtk-master768.jpg?w=1280&q=75",
+      "seafood": "https://static01.nyt.com/images/2024/02/28/multimedia/LH-seafood-boil-gktl/LH-seafood-boil-gktl-master768.jpg?w=1280&q=75",
+      "herb-based dishes": "https://static01.nyt.com/images/2022/09/08/dining/as-herby-tofu/as-herby-tofu-master768.jpg?w=1280&q=75"
     },
-    "wine_image": "",
+    "wine_img": "",
     "next_wine": "Champagne"
   },
   "7": {
     "wine_name": "Champagne",
     "description": "Champagne, a sparkling wine from the Champagne region of France, is made primarily from Chardonnay, Pinot Noir, and Pinot Meunier grapes. It's celebrated worldwide for its quality and tradition.",
     "pairs_with": {
-      "steak": "",
-      "fried chicken": "",
-      "fried potatoes": ""
+      "steak": "https://static01.nyt.com/images/2022/05/18/dining/14steakrex/18steakrex-articleLarge.jpg",
+      "fried chicken": "https://static01.nyt.com/images/2020/09/10/dining/mc-nashville-hot-chicken/merlin_154348302_6054d377-9f8a-4a62-80f7-f2faa0efd2d2-master768.jpg?w=1280&q=75",
+      "fried potatoes": "https://static01.nyt.com/images/2018/09/16/magazine/16mag-eat/16mag-eat-master768.png?w=1280&q=75"
     },
-    "wine_image": "",
+    "wine_img": "",
     "next_wine": "Malbec"
   },
   "8": {
     "wine_name": "Malbec",
     "description": "Malbec is a purple grape variety used in making red wine, which originated in France but is now mainly produced in Argentina. This wine is known for its dark, intense color and robust tannins.",
     "pairs_with": {
-      "steak": "",
-      "blue cheese": "",
-      "pork": ""
+      "steak": "https://static01.nyt.com/images/2022/05/18/dining/14steakrex/18steakrex-articleLarge.jpg",
+      "blue cheese": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.tastyeverafter.com%2Fwp-content%2Fuploads%2F2015%2F01%2Fbluecheesewaxpaper.jpg&f=1&nofb=1&ipt=c4d603f4bf2a28e04dcaceeefaca618e47b10cfc38678275e27892cbcc321cbd&ipo=images",
+      "pork": "https://static01.nyt.com/images/2023/04/11/multimedia/AS-Harissa-Honey-Pork-Tenderloin-bjfm/AS-Harissa-Honey-Pork-Tenderloin-bjfm-master768.jpg?w=1280&q=75"
     },
-    "wine_image": "",
+    "wine_img": "",
     "next_wine": "Shiraz"
   },
   "9": {
     "wine_name": "Shiraz",
     "description": "Shiraz, or Syrah, is a dark-skinned grape variety grown throughout the world and used primarily to produce powerful red wines. It features flavors of blackberry, mint and black pepper.",
     "pairs_with": {
-      "beef brisket": "",
-      "lamb": "",
-      "chili": ""
+      "beef brisket": "https://static01.nyt.com/images/2024/04/16/multimedia/16PASSOVERrex1-brisketrex-qvmb/12NATHANrex1-brisketrex-qvmb-master768.jpg?w=1280&q=75",
+      "lamb": "https://static01.nyt.com/images/2023/11/20/multimedia/DT-Rosemary-Rack-of-Lamb-hcmw/DT-Rosemary-Rack-of-Lamb-hcmw-articleLarge.jpg",
+      "chili": "https://static01.nyt.com/images/2019/01/09/dining/sd-slow-cooker-chili/sd-slow-cooker-chili-master768.jpg?w=1280&q=75"
     },
-    "wine_image": "",
+    "wine_img": "",
     "next_wine": "Pinot Noir"
   }
 }
