@@ -27,8 +27,8 @@ $(document).ready(() => {
                     console.log("No redirection needed.");
                 }
             },
-            error: function (_) {
-                console.error(this.error)
+            error: function (e) {
+                console.error(e)
             }
         })
     }
