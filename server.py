@@ -69,10 +69,10 @@ def record(section: str):
             if json_data['wine_visited'] not in user_quiz_info['wines_covered']:
                 user_learn_info['wines_covered'].append(json_data['wine_visited'])
 
-        elif 'time_started' in json_data:
+        elif user_learn_info['time_started'] is None and 'time_started' in json_data:
             user_learn_info['time_started'] = json_data['time_started']
 
-        return jsonify({'redirect': url_for('learn', wine_num='1')})
+        return jsonify({'redirect': url_for('learn', wine_num='1'), 'time_started': user_learn_info['time_started']})
 
     return jsonify({'status': 'No action performed'})
 

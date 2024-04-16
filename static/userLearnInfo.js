@@ -8,10 +8,10 @@ $(document).ready(() => {
     $("#start-btn").click(() => {
         learningStarted = Date.now();
         logStartTime();
-    })
+    });
     // $("#next-btn").click(() =>
     //     currentWine
-    // })
+    // });
 })
 
 function logStartTime() {
@@ -23,11 +23,10 @@ function logStartTime() {
         contentType: 'application/json',
         data: JSON.stringify({'time_started': learningStarted}),
         success: function (response) {
-            console.log("saved the time:", learningStarted);
-            console.log(response)
             // Check if the server responded with a redirect URL
             if (response.redirect) {
-                // Redirect the browser to the specified URL
+                // If so, the browser to the specified URL
+                console.log("time_started:", response.time_started);
                 window.location.href = response.redirect;
             } else {
                 console.log("No redirection needed.");
