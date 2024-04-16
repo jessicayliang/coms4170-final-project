@@ -8,6 +8,11 @@ from flask import render_template
 from flask import Response, request, jsonify
 from markupsafe import Markup
 
+user_learn_info = {
+    'time_started': None,
+    'wines_covered': []
+}
+user_quiz_info = {}
 
 def load_wines() -> object:
     """
@@ -47,6 +52,27 @@ def learn(wine_num):
 @app.route('/quiz/<quiz_id>')
 def quiz(quiz_id):
     return render_template('quiz.html')
+
+@app.route('/record/<section>', methods=["POST"])
+def record(section: str):
+    """
+    Internal route that records information about the user. Meant to be used for both the quiz and learn sections.
+    """
+    json_data = request.get_json()
+
+    # the section can be either 'quiz' or 'learn'
+    if section == 'quiz':
+        # TODO: implement this
+        pass
+    elif section == 'learn':
+        if 'wine_visited' in json_data:
+            if json_data['wine_visited'] not in user_quiz_info['wines_covered']:
+                user_learn_info['wines_covered'].append(json_data['wine_visited'])
+
+        elif 'time_started' in json_data:
+            user_learn_info['time_started'] = json_data['time_started']
+
+        return jsonify(user_learn_info)
 
 
 if __name__ == '__main__':
