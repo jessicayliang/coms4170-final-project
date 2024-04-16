@@ -1,14 +1,17 @@
 {% extends "layout.html" %}
 {% block content %}
 
-    <div class="content-container">
+
+
+<body class="backgroundcolor">
+    <div class="content-container learn-backgroundcolor">
         <div class="row">
             <div class="col-2">
                 <img class='img-fluid' src="{{ wine.wine_img }}" alt="glass of {{ wine.wine_name }}">
             </div>
             <div class="col-10">
                 <h1 class="h1">{{ wine['wine_name'] }}</h1>
-                <body>
+{#                <body>#}
                     <p>{{ wine['description'] }}</p>
                     <h4>
                         Pair with:
@@ -21,9 +24,8 @@
                             {{ k }}
                         </div>
                     {% endfor %}
-
                     </div>
-                </body>
+{#                </body>#}
             </div>
         </div>
         <div class="row">
@@ -49,7 +51,7 @@
             </div>
         </div>
     </div>
-
+</body>
 
 
 

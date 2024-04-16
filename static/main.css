@@ -1,4 +1,8 @@
 
+body{
+    background-color: #353B14;
+}
+
 .navbar {
     display: flex;
     justify-content: space-between; /* This spaces out the two parts of the navbar */
@@ -20,6 +24,20 @@
     align-items: center;
     justify-content: center;
     line-height: 1.25;
+    /*background-color: #353B14;*/
+    color: floralwhite;
+}
+
+.backgroundcolor {
+    background-color: #353B14;
+}
+
+.learn-backgroundcolor{
+    background-color: floralwhite;
+}
+
+.navbar-text-color {
+    color: floralwhite;
 }
 
 .content-container {
@@ -57,12 +75,36 @@
     background-color: lightblue;
 }
 
+.start-button {
+    /*text-align: left;*/
+    background-color: floralwhite;
+    border: none;
+    color: black;
+    margin: 40px;
+}
+
+.start-button:hover {
+    background-color: navajowhite;
+}
+
 .footer {
     /*height: 40px; !* Define your footer height *!*/
+    /*width: 100%;*/
+    position: absolute;
+    bottom: 50px;
+    text-align: left;
+    padding: 2px ;
+    margin-left: 40px;
+    color: floralwhite;
+}
+
+.home-background-img {
     width: 100%;
+    height: auto;
     position: absolute;
     bottom: 0;
-    text-align: left;
-    padding: 30px ;
+    /*top: 0;*/
+    display: flex;
+    overflow: hidden;
 }
 
