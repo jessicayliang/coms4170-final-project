@@ -44,6 +44,9 @@ def home():
 def learn(wine_num):
     wine_to_render = wines[wine_num]
     return render_template('wine_info.html', wine=wine_to_render, next_id=get_next_wine_id(int(wine_num)))
+@app.route('/quiz/<quiz_id>')
+def quiz(quiz_id):
+    return render_template('quiz.html')
 
 
 if __name__ == '__main__':

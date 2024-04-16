@@ -14,7 +14,7 @@
 }
 
 .home-description {
-    font-family: Palatino;
+    font-family: Palatino, sans-serif;
     font-style: italic;
     font-size: xxx-large;
     align-items: center;
