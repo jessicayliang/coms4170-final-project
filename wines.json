@@ -106,9 +106,9 @@
       "pizza": "https://static01.nyt.com/images/2024/02/07/multimedia/ND-detroit-style-pizza-twpb/ND-detroit-style-pizza-twpb-master768.jpg?w=1280&q=75",
       "chocolate cake": "https://static01.nyt.com/images/2023/10/27/multimedia/27cakerex-plzm/27cakerex-plzm-articleLarge.jpg"
     },
-    "wine_img": "https://png.pngtree.com/png-vector/20230830/ourmid/pngtree-glass-of-red-wine-png-image_9196576.png"
-  },
-  "next_wine": "Pinot Noir"
+    "wine_img": "https://png.pngtree.com/png-vector/20230830/ourmid/pngtree-glass-of-red-wine-png-image_9196576.png",
+    "next_wine": "Pinot Noir"
+  }
 }
 
 

@@ -10,11 +10,11 @@ from markupsafe import Markup
 
 user_learn_info = {
     'time_started': None,
-    'wines_covered': []
 }
 user_quiz_info = {}
 
-def load_wines() -> object:
+
+def load_wines():
     """
     Load wines from the JSON file.
     :return: a python dictionary mapping wine name to image, pairing list, description, and next wine.
@@ -34,8 +34,10 @@ def get_next_wine_id(cur_wine_id: int) -> str:
     return str(cur_wine_id + 1)
 
 
-# The variable wines holds the wine dict
+# Runs on server startup. Get the wines, then mark them all as unseen.
 wines = load_wines()
+for wine_id, wine_details in wines.items():
+    wine_details['seen'] = False
 
 app = Flask(__name__)
 
@@ -45,36 +47,38 @@ app = Flask(__name__)
 def home():
     return render_template('home.html')
 
+@app.route('/getwines')
+def get_wines():
+    """
+    For debugging. Get the current state of wines.
+    """
+    return jsonify(wines)
 @app.route('/learn/<wine_num>')
 def learn(wine_num):
     wine_to_render = wines[wine_num]
-    return render_template('wine_details.html', wine=wine_to_render, next_id=get_next_wine_id(int(wine_num)), prev_id=str(int(wine_num)-1))
+    wine_to_render['seen'] = True
+
+    return render_template('wine_details.html', wine=wine_to_render, next_id=get_next_wine_id(int(wine_num)),
+                           prev_id=str(int(wine_num) - 1))
+
+
 @app.route('/quiz/<quiz_id>')
 def quiz(quiz_id):
     return render_template('quiz.html')
 
-@app.route('/record/<section>', methods=["POST"])
-def record(section: str):
+
+@app.route('/learn/record/time', methods=["POST"])
+def record_time():
     """
-    Internal route that records information about the user. Meant to be used for both the quiz and learn sections.
+    Internal route that timestamps the user's learn session.
     """
     json_data = request.get_json()
 
-    # the section can be either 'quiz' or 'learn'
-    if section == 'quiz':
-        # TODO: implement this
-        pass
-    elif section == 'learn':
-        if 'wine_visited' in json_data:
-            if json_data['wine_visited'] not in user_quiz_info['wines_covered']:
-                user_learn_info['wines_covered'].append(json_data['wine_visited'])
+    if user_learn_info['time_started'] is None and 'time_started' in json_data:
+        user_learn_info['time_started'] = json_data['time_started']
 
-        elif user_learn_info['time_started'] is None and 'time_started' in json_data:
-            user_learn_info['time_started'] = json_data['time_started']
+    return jsonify({'redirect': url_for('learn', wine_num='1'), 'time_started': user_learn_info['time_started']})
 
-        return jsonify({'redirect': url_for('learn', wine_num='1'), 'time_started': user_learn_info['time_started']})
-
-    return jsonify({'status': 'No action performed'})
 
 if __name__ == '__main__':
     app.run(debug=True, port=3200)
