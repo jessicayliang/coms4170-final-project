@@ -2,65 +2,60 @@
 {% block content %}
 
     <!-- Script to debug which wines are seen -->
-{#    <script src="{{ url_for('static', filename='seenWineTracker.js') }}"></script>#}
-
+    {#    <script src="{{ url_for('static', filename='seenWineTracker.js') }}"></script>#}
     <div class="content-container">
-
-
-<body class="backgroundcolor">
-    <div class="content-container learn-backgroundcolor">
-        <div class="row">
-            <div class="col-2">
-                <img class='img-fluid' src="{{ wine.wine_img }}" alt="glass of {{ wine.wine_name }}">
-            </div>
-            <div class="col-10">
-                <h1 class="h1">{{ wine['wine_name'] }}</h1>
-{#                <body>#}
-                    <p>{{ wine['description'] }}</p>
-                    <h4>
-                        Pair with:
-                    </h4>
-
-                    <div class="row">
-                    {% for k, v in wine.pairs_with.items() %}
-                        <div class="col-2">
-                            <img class='img-fluid' src="{{ v }}" alt="{{ k }}">
-                            {{ k }}
-                        </div>
-                    {% endfor %}
+        <div class="backgroundcolor">
+            <div class="content-container learn-backgroundcolor">
+                <div class="row">
+                    <div class="col-2">
+                        <img class='img-fluid' src="{{ wine.wine_img }}" alt="glass of {{ wine.wine_name }}">
                     </div>
-{#                </body>#}
+                    <div class="col-10">
+                        <h1 class="h1">{{ wine['wine_name'] }}</h1>
+                        <p>{{ wine['description'] }}</p>
+                        <h4>
+                            Pair with:
+                        </h4>
+
+                        <div class="row">
+                            {% for k, v in wine.pairs_with.items() %}
+                                <div class="col-2">
+                                    <img class='img-fluid' src="{{ v }}" alt="{{ k }}">
+                                    {{ k }}
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        {% set converted_prev_id = prev_id | int %}
+                        {% if converted_prev_id > 0 %}
+                            <a href={{ "/learn/" + prev_id }}>
+                                <button id="back-btn" class="btn btn-primary back-button"><i
+                                        class="bi bi-arrow-left"></i> Back
+                                </button>
+                            </a>
+                        {% endif %}
+                    </div>
+                    <div class="col-6">
+                        {% set converted_next_id = next_id | int %}
+                        {% if converted_next_id < 11 %}
+                            <a href={{ "/learn/" + next_id }}>
+                                <button id="next-btn" class="btn btn-primary next-button">Next <i
+                                        class="bi bi-arrow-right"></i>
+                                </button>
+                            </a>
+                        {% else %}
+                            <a href={{ "/quiz/" + '1' }}>
+                                <button id="finish-btn" class="btn btn-primary next-button">Quiz</button>
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-6">
-                {% set converted_prev_id = prev_id | int %}
-                {% if converted_prev_id > 0 %}
-                    <a href={{ "/learn/" + prev_id }}>
-                        <button id="back-btn" class="btn btn-primary back-button"><i class="bi bi-arrow-left"></i> Back
-                        </button>
-                    </a>
-                {% endif %}
-            </div>
-            <div class="col-6">
-                {% set converted_next_id = next_id | int %}
-                {% if converted_next_id < 11 %}
-                    <a href={{ "/learn/" + next_id }}>
-                        <button id="next-btn" class="btn btn-primary next-button">Next <i class="bi bi-arrow-right"></i>
-                        </button>
-                    </a>
-                {% else %}
-                    <a href={{ "/quiz/" + '1' }}>
-                        <button id="finish-btn" class="btn btn-primary next-button">Quiz</button>
-                    </a>
-                {% endif %}
-            </div>
+
         </div>
     </div>
-</body>
-
-
-
-
 
 {% endblock %}
