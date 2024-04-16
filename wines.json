@@ -96,8 +96,19 @@
       "chili": "https://static01.nyt.com/images/2019/01/09/dining/sd-slow-cooker-chili/sd-slow-cooker-chili-master768.jpg?w=1280&q=75"
     },
     "wine_img": "https://static.vecteezy.com/system/resources/previews/026/773/765/non_2x/wine-glass-with-ai-generated-free-png.png",
-    "next_wine": "Pinot Noir"
-  }
+    "next_wine": "Zinfandel"
+  },
+  "10": {
+    "wine_name": "Zinfandel",
+    "description": "This versatile red wine wine, known for its rich flavors and bold character, is the perfect complement to a wide range of dishes, from appetizers to desserts. Whether you’re enjoying a vegetarian feast or savoring a juicy piece of red meat, Zinfandel will transform your meal into a delightful experience.",
+    "pairs_with": {
+      "red meat": "https://static01.nyt.com/images/2022/05/18/dining/14steakrex/18steakrex-articleLarge.jpg",
+      "pizza": "https://static01.nyt.com/images/2024/02/07/multimedia/ND-detroit-style-pizza-twpb/ND-detroit-style-pizza-twpb-master768.jpg?w=1280&q=75",
+      "chocolate cake": "https://static01.nyt.com/images/2023/10/27/multimedia/27cakerex-plzm/27cakerex-plzm-articleLarge.jpg"
+    },
+    "wine_img": "https://png.pngtree.com/png-vector/20230830/ourmid/pngtree-glass-of-red-wine-png-image_9196576.png"
+  },
+  "next_wine": "Pinot Noir"
 }
 
 
