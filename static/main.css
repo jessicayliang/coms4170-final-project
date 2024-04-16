@@ -16,9 +16,10 @@
 .home-description {
     font-family: Palatino, sans-serif;
     font-style: italic;
-    font-size: xxx-large;
+    font-size: 5.5em;
     align-items: center;
     justify-content: center;
+    line-height: 1.25;
 }
 
 .content-container {
@@ -37,9 +38,31 @@
     border: none;
     color: black;
     float: right;
+    margin: 40px;
 }
 
 .next-button:hover {
     background-color: lightblue;
+}
+
+.back-button {
+    text-align: left;
+    background-color: lightsteelblue;
+    border: none;
+    color: black;
+    margin: 40px;
+}
+
+.back-button:hover {
+    background-color: lightblue;
+}
+
+.footer {
+    /*height: 40px; !* Define your footer height *!*/
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: left;
+    padding: 30px ;
 }
 

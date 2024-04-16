@@ -43,7 +43,7 @@ def home():
 @app.route('/learn/<wine_num>')
 def learn(wine_num):
     wine_to_render = wines[wine_num]
-    return render_template('wine_details.html', wine=wine_to_render, next_id=get_next_wine_id(int(wine_num)))
+    return render_template('wine_details.html', wine=wine_to_render, next_id=get_next_wine_id(int(wine_num)), prev_id=str(int(wine_num)-1))
 @app.route('/quiz/<quiz_id>')
 def quiz(quiz_id):
     return render_template('quiz.html')
