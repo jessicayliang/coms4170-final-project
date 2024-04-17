@@ -39,12 +39,13 @@
                         {% endif %}
                     </div>
                     <div class="col-6">
-                        {% set converted_next_id = next_id | int %}
-                        {% if converted_next_id < 11 %}
+                        {% set converted_curr_id = curr_id | int %}
+                        {% if converted_curr_id < 10 %}
                             <a href={{ "/learn/" + next_id }}>
                                 <button id="next-btn" class="btn btn-primary next-button">Next <i
                                         class="bi bi-arrow-right"></i>
                                 </button>
+                                {{ converted_next_id }}
                             </a>
                         {% else %}
                             <a href={{ "/quiz/" + '1' }}>
