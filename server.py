@@ -33,9 +33,19 @@ def get_next_wine_id(cur_wine_id: int) -> str:
         return "1"
     return str(cur_wine_id + 1)
 
+def load_quiz():
+    with open('quiz.json') as file:
+        quiz_data = json.load(file)
+    return quiz_data
+
+def get_next_quiz_id(current_id):
+    # Logic to get the next quiz ID
+    return str(int(current_id) + 1)
+
 
 # Runs on server startup. Get the wines, then mark them all as unseen.
 wines = load_wines()
+quizzes = load_quiz()
 for wine_id, wine_details in wines.items():
     wine_details['seen'] = False
 
@@ -62,9 +72,14 @@ def learn(wine_num):
                            prev_id=str(int(wine_num) - 1))
 
 
-@app.route('/quiz/<quiz_id>')
-def quiz(quiz_id):
-    return render_template('quiz.html')
+@app.route('/quiz/<quiz_num>')
+def quiz(quiz_num):
+    quiz_to_render = quizzes.get(quiz_num) # quizzes should be your dictionary of all quiz data
+    if not quiz_to_render:
+        # Handle the case where the quiz number does not exist
+        return "Quiz not found", 404
+    next_id = get_next_quiz_id(quiz_num)
+    return render_template('quiz.html', quiz=quiz_to_render, next_id=next_id)
 
 
 @app.route('/learn/record/time', methods=["POST"])

@@ -1,4 +1,120 @@
 {% extends "layout.html" %}
+
 {% block content %}
-<h1>Not implemented (yet).</h1>
+<title>{{ quiz['question'] }} - Wine Pairing Quiz</title>
+<link rel="stylesheet" href="{{ url_for('static', filename='quiz.css') }}">
+<!-- Add any other CSS you need for your quiz here -->
+
+<div class="quiz-container">
+  <!-- Wine choices on the left -->
+  <div class="wine-choices">
+    {% for choice in quiz['wine_choices'] %}
+    <div class="wine-choice" draggable="true" ondragstart="drag(event)" id="{{ choice['wine'] }}">
+      <img src="{{ choice['image_url'] }}" alt="{{ choice['wine'] }}">
+      <p>{{ choice['wine'] }}</p>
+    </div>
+    {% endfor %}
+  </div>
+  
+  <!-- Plate and Food in the center -->
+  <div class="food-pairing">
+    <img src="{{ quiz['food_pairing']['image_url'] }}" alt="{{ quiz['food_pairing']['description'] }}" class="food-image">
+  </div>
+  
+  <!-- Question and Drop Area on the right -->
+  <div class="question-drop-area">
+    <div class="question">
+      {{ quiz['question'] }}
+    </div>
+    <div class="drop-area" style="width: 300px; height: 200px; border: 2px dashed #ccc;">
+        Drop your wine choice here
+      </div>
+    <div class="drop-area" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <p>Drop Here</p>
+    </div>
+    <button class="next-q-button" id="next-question-btn" onclick="nextQuestion()">Next Question</button>
+  </div>
+</div>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+  const dropArea = document.querySelector('.drop-area');
+  const nextQuestionButton = document.querySelector('#next-question-btn');
+  
+  dropArea.addEventListener('dragover', function(event) {
+    event.preventDefault();
+    console.log("Drag over!");
+  });
+
+  dropArea.addEventListener('drop', function(event) {
+    event.preventDefault();
+    console.log("Dropped!");
+    event.target.style.backgroundColor = 'red';
+    nextQuestionButton.style.display = 'block'; // Show the 'Next Question' button
+  });
+
+  nextQuestionButton.addEventListener('click', function() {
+    loadNextQuestion(); // Function to load the next question
+    nextQuestionButton.style.display = 'none'; // Hide button again until next drop
+    dropArea.style.backgroundColor = ''; // Reset drop area color
+  });
+});
+function loadNextQuestion() {
+  console.log("Loading next question...");
+
+  // Increment the question number to move to the next question
+  currentQuestionNumber++;
+
+  // Check if the next question exists
+  if (!quizData[currentQuestionNumber]) {
+    console.log("No more questions available.");
+    showResults(); // Function to display final results or some end message
+    return;
+  }
+
+  const questionData = quizData[currentQuestionNumber];
+
+  // Update question text
+  document.querySelector('.question').textContent = questionData.question;
+
+  // Update food pairing image
+  const foodImage = document.querySelector('.food-pairing img');
+  foodImage.src = questionData.food_pairing.image_url;
+  foodImage.alt = questionData.food_pairing.description;
+
+  // Clear previous wine choices and add new ones
+  const wineChoicesContainer = document.querySelector('.wine-choices');
+  wineChoicesContainer.innerHTML = ''; // Clear previous choices
+
+  questionData.wine_choices.forEach(choice => {
+    const wineChoiceElement = document.createElement('div');
+    wineChoiceElement.classList.add('wine-choice');
+    wineChoiceElement.draggable = true;
+    wineChoiceElement.id = choice.wine; // Assign ID for the drag data
+    wineChoiceElement.addEventListener('dragstart', drag);
+
+    const image = document.createElement('img');
+    image.src = choice.image_url;
+    image.alt = choice.wine;
+
+    const label = document.createElement('p');
+    label.textContent = choice.wine;
+
+    wineChoiceElement.appendChild(image);
+    wineChoiceElement.appendChild(label);
+    wineChoicesContainer.appendChild(wineChoiceElement);
+  });
+
+  // Reset drop area
+  const dropArea = document.querySelector('.drop-area');
+  dropArea.style.backgroundColor = ''; // Reset background color
+  dropArea.style.backgroundImage = ''; // Clear any previous wine image set as background
+}
+
+function showResults() {
+  document.querySelector('.quiz-container').innerHTML = `<div>Your final score is: ${score}</div>`;
+  // Optionally reset the quiz or offer options to restart or leave
+}
+</script>
+
+<!--<script src="{{ url_for('static', filename='quiz.js') }}"></script>-->
 {% endblock %}
