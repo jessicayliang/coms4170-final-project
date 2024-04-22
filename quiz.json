@@ -79,7 +79,7 @@
     "next_question": "4"
   },
 
-  "4": {
+  "7": {
     "question": "Thomas is having seared salmon, what would pair well with this dish?",
     "food_pairing": {
       "description": "Seared Salmon",
@@ -106,7 +106,7 @@
     "next_question": "5"
   },
 
-  "7": {
+  "9": {
     "question": "Sophia wants something to balance out the saltiness of caviar, which wine should she choose?",
     "food_pairing": {
       "description": "Caviar",
@@ -133,7 +133,7 @@
     "next_question": "6"
   },
 
-  "9": {
+  "11": {
     "question": "Joey is having carbonara, what would pair well with this dish?",
     "food_pairing": {
       "description": "Carbonara",
@@ -160,7 +160,7 @@
     "next_question": "7"
   },
 
-  "11": {
+  "13": {
     "question": "Kayla is having barbecue pork ribs, what wine pairs well with this? ",
     "food_pairing": {
       "description": "Barbecue pork ribs",
@@ -187,7 +187,7 @@
     "next_question": "8"
   },
 
-  "13": {
+  "15": {
     "question": "Timothy is having roast lamb for dinner, what wine should he drink with this dish? ",
     "food_pairing": {
       "description": "Roast Lamb",
@@ -214,7 +214,7 @@
     "next_question": "9"
   },
 
-  "15": {
+  "17": {
     "question": "Poppy is having steak and fries, what wine should he drink with this dish? ",
     "food_pairing": {
       "description": "Steak",
@@ -241,7 +241,7 @@
     "next_question": "10"
   },
 
-  "17": {
+  "19": {
     "question": "Johnathan is having a blue cheese burger and wants to get a glass of wine, what should he choose? ",
     "food_pairing": {
       "description": "Blue cheese burger",
