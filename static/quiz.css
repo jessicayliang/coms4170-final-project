@@ -8,6 +8,9 @@
     flex-wrap: wrap;
     justify-content: space-around; /* This will space out the wine choices evenly */
     max-width: 33%; /* Adjust if needed */
+    background-color: #fff7dd;
+    border-radius: 30px;
+    margin-right: 20px;
 }
 
 .wine-choice {
@@ -44,10 +47,16 @@
     flex-direction: column;
     align-items: center; /* Center content */
     max-width: 33%; /* maximum width of the column */
+    margin-left: 20px;
+    background-color: #fff7dd;
+    border-radius: 30px; 
 }
 
 .question {
     margin-bottom: 20px; /* space between the question and the drop area */
+    font-size: 20px;
+    margin-top: 20px;
+    margin-left: 18px;
 }
 
 .drop-area {
@@ -58,8 +67,8 @@
     align-items: center;
     justify-content: center;
     background-color: #f7f7f7; /* light background color */
+    
 }
-
 
 
 .next-q-button{
