@@ -25,7 +25,7 @@
 
                         <div class="row">
                             {% for k, v in wine.pairs_with.items() %}
-                                <div class="col-2">
+                                <div class="col-3">
                                     <img class='img-fluid' src="{{ v }}" alt="{{ k }}">
                                     {{ k }}
                                 </div>
@@ -33,7 +33,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div id='button-row' class="row">
                     <div class="col-6">
                         {% set converted_prev_id = prev_id | int %}
                         {% if converted_prev_id > 0 %}

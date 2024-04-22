@@ -34,6 +34,18 @@ body{
 
 .learn-backgroundcolor{
     background-color: floralwhite;
+    min-height: 35em;
+    border-radius: 0 0 5px 5px;
+    display: flex;           /* Establishes this element as a flex container */
+    flex-direction: column;  /* Stacks children vertically */
+    justify-content: space-between; /* Aligns children with space between them */
+    height: 100%;            /* Ensures the container takes full height, adjust as needed */
+}
+
+#button-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }
 
 .learn-font{
@@ -114,7 +126,7 @@ body{
     border: none;
     color: black;
     float: right;
-    margin: 40px;
+    margin: 20px;
 }
 
 .next-button:hover {
@@ -126,7 +138,7 @@ body{
     background-color: lightsteelblue;
     border: none;
     color: black;
-    margin: 40px;
+    margin: 20px;
 }
 
 .back-button:hover {
@@ -184,13 +196,4 @@ body{
 
 .body-font {
     font-family: 'Inter', sans-serif;
-}
-
-#wine-explorer {
-    margin-top: 3em;
-    border-radius: 20px;
-    background: floralwhite;
-    height: 80vh;
-    background-size: cover;
-    background-position: center;
 }
