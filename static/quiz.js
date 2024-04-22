@@ -28,8 +28,6 @@ document.addEventListener('DOMContentLoaded', () => {
     nextQuestionButton.style.display = 'block';
 });
 
-
-
   nextQuestionButton.addEventListener('click', function(event) {
       event.preventDefault();
       event.stopPropagation();
@@ -90,9 +88,13 @@ function loadNextQuestion() {
       currentQuestionNumber = questionData.next_question;
       nextQuestionButton.style.display = 'block'; // Show next question button after a delay
     } else {
-      showResults(); // End of quiz
+      nextQuestionButton.style.display = 'block';
+      nextQuestionButton.textContent = 'Show Results'; // Change button text for the last question
+      nextQuestionButton.onclick = () => { // Change event handler for the last question
+        showResults();
+      };
     }
-  }, 500); // Delay of 500ms for demonstration, adjust as needed
+  }, 500); // Maintain the 500ms delay for UI consistency
 }
 
 
