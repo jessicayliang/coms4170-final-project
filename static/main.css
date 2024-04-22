@@ -185,3 +185,7 @@ body{
 .body-font {
     font-family: 'Inter', sans-serif;
 }
+
+#wine-country-bg {
+    background-image: url('static/images/bg.webp') ;
+}
