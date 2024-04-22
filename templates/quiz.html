@@ -1,11 +1,12 @@
 {% extends "layout.html" %}
 
 {% block content %}
+
 <title>{{ quiz['question'] }} - Wine Pairing Quiz</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='quiz.css') }}">
 <!-- Add any other CSS you need for your quiz here -->
 
-<div class="quiz-container">
+<div class="quiz-container body-font">
   <!-- Wine choices on the left -->
   <div class="wine-choices">
     {% for choice in quiz['wine_choices'] %}

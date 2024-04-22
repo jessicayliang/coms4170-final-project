@@ -78,3 +78,8 @@
     float: right;
     display: none; /* Initially hidden */
 }
+
+.body-font {
+    font-family: 'Inter', sans-serif;
+}
+
