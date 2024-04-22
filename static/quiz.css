@@ -50,6 +50,7 @@
     margin-left: 20px;
     background-color: #fff7dd;
     border-radius: 30px; 
+    justify-content: center;
 }
 
 .question {
@@ -82,4 +83,5 @@
 .body-font {
     font-family: 'Inter', sans-serif;
 }
+
 

@@ -13,10 +13,6 @@ body{
     font-family: "Gill Sans";
 }
 
-.gill-sans-font {
-    font-family: "Gill Sans";
-}
-
 .home-description {
     font-family: Palatino, sans-serif;
     font-style: italic;
@@ -43,10 +39,6 @@ body{
     padding: 50px;
     font-size: large;
     line-height: 2;
-
-}
-
-.navbar-container{
 
 }
 
@@ -95,6 +87,7 @@ body{
     padding: 2px ;
     margin-left: 40px;
     color: floralwhite;
+    font-size: 56px;
 }
 
 .home-background-img {
@@ -107,3 +100,8 @@ body{
     overflow: hidden;
 }
 
+.title-font {
+    font-family: "Fraunces", serif; 
+    font-weight: 500;
+    color: floralwhite
+}
