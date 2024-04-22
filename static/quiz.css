@@ -19,9 +19,9 @@
 }
 
 .wine-choice img {
-    width: 100%; /* Image will fill the width of .wine-choice */
-    max-width: 100px; /* Maximum width of the image */
-    height: auto; /* Maintain the aspect ratio of the image */
+    height: 100px; /* Fixed height for uniformity */
+    width: auto; /* Adjust width to maintain aspect ratio */
+    max-width: 100px; /* Limit the maximum width to prevent overly wide images */
     margin-bottom: 10px; /* Space between the image and the wine name */
 }
 

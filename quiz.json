@@ -2,7 +2,7 @@
   "question": "Daisy is having pasta with tomato sauce, what would pair well with this dish?",
   "food_pairing": {
     "description": "Pasta with Tomato Sauce",
-    "image_url": "https://png.pngtree.com/png-clipart/20231003/original/pngtree-spaghetti-bolognese-tomato-sauce-cartoon-illustration-delicious-food-dining-decorative-pattern-png-image_13249318.png"
+    "image_url": "https://www.archanaskitchen.com/images/archanaskitchen/10-Brands/DelMonte-KidsRecipes/Spaghetti_Pasta_Recipe_In_Creamy_Tomato_Sauce_-_Kids_Recipes_Made_With_Del_Monte-3.jpg"
   },
   "correct_answer": {
     "wine": "Zinfandel",
@@ -56,7 +56,7 @@
     "question": "Lily wants to find a wine to pair with her charcuterie board, what would pair well with it?",
     "food_pairing": {
       "description": "Charcuterie Board",
-      "image_url": "https://png.pngtree.com/png-clipart/20230913/original/pngtree-charcuterie-clipart-wooden-board-with-meat-cartoon-vector-png-image_11058939.png"
+      "image_url": "https://food.fnr.sndimg.com/content/dam/images/food/fullset/2022/09/07/FNK_Charcuterie-board-how-to_step-13.jpg.rend.hgtvcom.1280.960.suffix/1662570515845.jpeg"
     },
     "correct_answer": {
       "wine": "Champagne",
@@ -137,7 +137,7 @@
     "question": "Joey is having carbonara, what would pair well with this dish?",
     "food_pairing": {
       "description": "Carbonara",
-      "image_url": "https://png.pngtree.com/png-clipart/20231005/original/pngtree-spaghetti-carbonara-on-plate-png-image_13126533.png"
+      "image_url": "https://static01.nyt.com/images/2021/02/14/dining/carbonara-horizontal/carbonara-horizontal-square640-v2.jpg"
     },
     "correct_answer": {
       "wine": "Pinot Grigio",
@@ -164,7 +164,7 @@
     "question": "Kayla is having barbecue pork ribs, what wine pairs well with this? ",
     "food_pairing": {
       "description": "Barbecue pork ribs",
-      "image_url": "https://cdn.pixabay.com/photo/2014/12/21/23/24/spare-ribs-575310_960_720.png"
+      "image_url": "https://www.allrecipes.com/thmb/IWVelWahUb2gQxixWJC2N-HXp0k=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/22469-Barbecue-Ribs-ddmfs-2x1-210-e799db142f594b00bb317bb357d0971c.jpg"
     },
     "correct_answer": {
       "wine": "Pinot Noir",
@@ -218,7 +218,7 @@
     "question": "Poppy is having steak and fries, what wine should he drink with this dish? ",
     "food_pairing": {
       "description": "Steak",
-      "image_url": "https://png.pngtree.com/png-clipart/20231005/original/pngtree-steak-fast-food-cartoon-png-image_13125740.png"
+      "image_url": "https://images.food52.com/zA_65qNitNW9SWneIVcrqELWMJ8=/1200x1200/52096452-f9c1-49e9-9e76-46c694bee2ba--2020-1124_steak-frites_3x2_rocky-luten_032.jpg"
     },
     "correct_answer": {
       "wine": "Cabernet",
@@ -245,7 +245,7 @@
     "question": "Johnathan is having a blue cheese burger and wants to get a glass of wine, what should he choose? ",
     "food_pairing": {
       "description": "Blue cheese burger",
-      "image_url": "https://static.vecteezy.com/system/resources/previews/027/145/404/non_2x/delicious-blue-cheese-burger-isolated-on-transparent-background-png.png"
+      "image_url": "https://hips.hearstapps.com/del.h-cdn.co/assets/17/16/1600x1200/sd-aspect-1492695774-blue-cheese-burger.jpg?resize=1200:*"
     },
     "correct_answer": {
       "wine": "Malbec",
