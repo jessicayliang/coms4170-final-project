@@ -186,6 +186,11 @@ body{
     font-family: 'Inter', sans-serif;
 }
 
-#wine-country-bg {
-    background-image: url('static/images/bg.webp') ;
+#wine-explorer {
+    margin-top: 3em;
+    border-radius: 20px;
+    background: floralwhite;
+    height: 80vh;
+    background-size: cover;
+    background-position: center;
 }

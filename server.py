@@ -68,6 +68,11 @@ def get_wines():
     """
     return jsonify(wines)
 
+@app.route('/learn')
+def explore():
+    return render_template('wines_explore.html')
+
+
 @app.route('/learn/<wine_num>')
 def learn(wine_num):
     wine_to_render = wines[wine_num]
