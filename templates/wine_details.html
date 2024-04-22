@@ -3,7 +3,13 @@
 
     <!-- Script to debug & log which wines are seen -->
     <script src="{{ url_for('static', filename='seenWineTracker.js') }}"></script>
+
     <div class="content-container">
+        <div class="progress" role="progressbar" aria-label="wines-seen" aria-valuenow="{{ curr_id }}" aria-valuemin="0"
+             aria-valuemax="10" style="height: 3px">
+            <div class="progress-bar" style="width: {{ (curr_id | float  / 10.0 * 100)|string }}%"></div>
+        </div>
+
         <div class="backgroundcolor">
             <div class="content-container learn-backgroundcolor learn-font">
                 <div class="row">
