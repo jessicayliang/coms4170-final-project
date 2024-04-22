@@ -79,13 +79,11 @@ def all_wines():
 
 @app.route('/quiz/<quiz_num>')
 def quiz(quiz_num):
-    quiz_to_render = quizzes.get(quiz_num) # quizzes should be your dictionary of all quiz data
+    quiz_to_render = quizzes.get(quiz_num)
     if not quiz_to_render:
-        # Handle the case where the quiz number does not exist
         return "Quiz not found", 404
     next_id = get_next_quiz_id(quiz_num)
     return render_template('quiz.html', quiz=quiz_to_render, next_id=next_id)
-
 
 @app.route('/learn/record/time', methods=["POST"])
 def record_time():
