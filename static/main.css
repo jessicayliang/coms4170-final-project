@@ -1,6 +1,6 @@
 
 body{
-    background-color: #353B14;
+    background-color: #848c56;
 }
 
 .navbar {
@@ -24,12 +24,11 @@ body{
     align-items: center;
     justify-content: center;
     line-height: 1.25;
-    /*background-color: #353B14;*/
     color: floralwhite;
 }
 
 .backgroundcolor {
-    background-color: #353B14;
+    background-color: #848c56;
 }
 
 .learn-backgroundcolor{
