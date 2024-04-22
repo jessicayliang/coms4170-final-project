@@ -26,7 +26,7 @@
     "next_question": "2"
   },
 
-  "3": {
+  "2": {
       "question": "Simon is having some raw oysters at a bar, what would pair well with this dish?",
       "food_pairing": {
         "description": "Raw Oysters",
@@ -53,7 +53,7 @@
       "next_question": "3"
     },
 
-    "5": {
+    "3": {
       "question": "Lily wants to find a wine to pair with her charcuterie board, what would pair well with it?",
       "food_pairing": {
         "description": "Charcuterie Board",
@@ -80,7 +80,7 @@
       "next_question": "4"
     },
 
-    "7": {
+    "4": {
       "question": "Thomas is having seared salmon, what would pair well with this dish?",
       "food_pairing": {
         "description": "Seared Salmon",
@@ -107,7 +107,7 @@
       "next_question": "5"
     },
 
-    "9": {
+    "5": {
       "question": "Sophia wants something to balance out the saltiness of caviar, which wine should she choose?",
       "food_pairing": {
         "description": "Caviar",
@@ -134,7 +134,7 @@
       "next_question": "6"
     },
 
-    "11": {
+    "6": {
       "question": "Joey is having carbonara, what would pair well with this dish?",
       "food_pairing": {
         "description": "Carbonara",
@@ -161,7 +161,7 @@
       "next_question": "7"
     },
 
-    "13": {
+    "7": {
       "question": "Kayla is having barbecue pork ribs, what wine pairs well with this? ",
       "food_pairing": {
         "description": "Barbecue pork ribs",
@@ -188,7 +188,7 @@
       "next_question": "8"
     },
 
-    "15": {
+    "8": {
       "question": "Timothy is having roast lamb for dinner, what wine should he drink with this dish? ",
       "food_pairing": {
         "description": "Roast Lamb",
@@ -215,7 +215,7 @@
       "next_question": "9"
     },
 
-    "17": {
+    "9": {
       "question": "Poppy is having steak and fries, what wine should he drink with this dish? ",
       "food_pairing": {
         "description": "Steak",
@@ -242,7 +242,7 @@
       "next_question": "10"
     },
 
-    "19": {
+    "10": {
       "question": "Johnathan is having a blue cheese burger and wants to get a glass of wine, what should he choose? ",
       "food_pairing": {
         "description": "Blue cheese burger",

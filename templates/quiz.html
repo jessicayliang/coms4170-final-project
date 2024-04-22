@@ -1,6 +1,9 @@
 {% extends "layout.html" %}
 
 {% block content %}
+<head>
+  <script src="{{ url_for('static', filename='quiz.js') }}"></script>
+</head>
 
 <title>{{ quiz['question'] }} - Wine Pairing Quiz</title>
 <link rel="stylesheet" href="{{ url_for('static', filename='quiz.css') }}">
@@ -33,7 +36,5 @@
     <button class="next-q-button" id="next-question-btn" onclick="loadNextQuestion()">Next Question</button>
   </div>
 </div>
-
-<script src="{{ url_for('static', filename='quiz.js') }}"></script>
 
 {% endblock %}

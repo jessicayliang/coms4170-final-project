@@ -1,104 +1,109 @@
-let currentQuestionNumber = 0;
+let currentQuestionNumber = 1;
 let quizData = {};
+let score = 0;  // Define score variable to keep track of user scores.
 
 document.addEventListener('DOMContentLoaded', () => {
   fetch('/static/quiz.json')
-    .then(response => response.json())
-    .then(data => {
+  .then(response => response.json())
+  .then(data => {
       quizData = data;
-      loadNextQuestion();
-    });
+      console.log("Initial load, current question number:", currentQuestionNumber);
+      loadNextQuestion(); // Load initial question on data fetch success
+  })
+  .catch(error => console.error('Error loading the quiz data:', error));
 
-    const dropArea = document.querySelector('.drop-area');
-    const nextQuestionButton = document.querySelector('#next-question-btn');
-    
-    dropArea.addEventListener('dragover', function(event) {
+  const dropArea = document.querySelector('.drop-area');
+  const nextQuestionButton = document.querySelector('#next-question-btn');
+
+  dropArea.addEventListener('dragover', function(event) {
       event.preventDefault();
-      console.log("Drag over!");
-    });
-  
-    dropArea.addEventListener('drop', function(event) {
-      event.preventDefault();
-      console.log("Dropped!");
-      event.target.style.backgroundColor = 'red';
-      nextQuestionButton.style.display = 'block'; // Show the 'Next Question' button
-    });
-  
-    nextQuestionButton.addEventListener('click', function() {
-      loadNextQuestion(); // Function to load the next question
-      nextQuestionButton.style.display = 'none'; // Hide button again until next drop
-      dropArea.style.backgroundColor = ''; // Reset drop area color
-    });
+      event.stopPropagation();
   });
-  function loadNextQuestion() {
-    console.log("Loading next question...");
-  
-    // Increment the question number to move to the next question
-    currentQuestionNumber++;
-  
-    // Check if the next question exists
-    if (!quizData[currentQuestionNumber]) {
+
+  dropArea.addEventListener('drop', function(event) {
+    event.preventDefault();
+    event.stopPropagation();
+    console.log("Drop event: item dropped:", event.dataTransfer.getData("text"));
+    event.target.style.backgroundColor = 'red';
+    nextQuestionButton.style.display = 'block';
+});
+
+
+
+  nextQuestionButton.addEventListener('click', function(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      if (nextQuestionButton.style.display === 'block') {
+          console.log("Next question button clicked, current question number before load:", currentQuestionNumber);
+          loadNextQuestion();
+          nextQuestionButton.style.display = 'none';
+          dropArea.style.backgroundColor = '';
+      }
+  });
+});
+
+function loadNextQuestion() {
+  console.log("Before loading new question - Current question ID:", currentQuestionNumber);
+  const questionData = quizData[currentQuestionNumber];
+
+  if (!questionData) {
       console.log("No more questions available.");
-      showResults(); // Function to display final results or some end message
+      showResults(); // Show results if no more questions
       return;
-    }
-  
-    const questionData = quizData[currentQuestionNumber];
-  
-    // Update question text
-    document.querySelector('.question').textContent = questionData.question;
-  
-    // Update food pairing image
-    const foodImage = document.querySelector('.food-pairing img');
-    foodImage.src = questionData.food_pairing.image_url;
-    foodImage.alt = questionData.food_pairing.description;
-  
-    // Clear previous wine choices and add new ones
-    const wineChoicesContainer = document.querySelector('.wine-choices');
-    wineChoicesContainer.innerHTML = ''; // Clear previous choices
-    console.log("Wine choices container cleared and ready for new choices.");
-  
-    questionData.wine_choices.forEach(choice => {
+  }
+
+  console.log("Loading question ID:", currentQuestionNumber);
+  console.log("Current question data:", questionData);
+
+
+  // Update the question text and image
+  document.querySelector('.question').textContent = questionData.question;
+  const foodImage = document.querySelector('.food-pairing img');
+  foodImage.src = questionData.food_pairing.image_url;
+  foodImage.alt = questionData.food_pairing.description;
+
+  // Update wine choices
+  const wineChoicesContainer = document.querySelector('.wine-choices');
+  wineChoicesContainer.innerHTML = ''; // Clear previous choices
+
+  questionData.wine_choices.forEach(choice => {
       const wineChoiceElement = document.createElement('div');
       wineChoiceElement.classList.add('wine-choice');
       wineChoiceElement.draggable = true;
       wineChoiceElement.id = choice.wine;
-      
+      wineChoiceElement.setAttribute('ondragstart', 'drag(event)');
+
       const image = document.createElement('img');
       image.src = choice.image_url;
       image.alt = choice.wine;
-  
+
       const label = document.createElement('p');
       label.textContent = choice.wine;
-  
+
       wineChoiceElement.appendChild(image);
       wineChoiceElement.appendChild(label);
       wineChoicesContainer.appendChild(wineChoiceElement);
-  
-      // Reattach the drag event listener
-      wineChoiceElement.addEventListener('dragstart', drag);
-    });
-  
-    console.log("New wine choices added.");
-  
-    // Reset drop area
-    const dropArea = document.querySelector('.drop-area');
-    dropArea.style.backgroundColor = ''; // Reset background color
-    dropArea.style.backgroundImage = ''; // Clear any previous wine image set as background
-  }
-  
-  function drag(event) {
-    event.dataTransfer.setData("text/plain", event.target.id);
-    console.log("Dragging:", event.target.id);
-  }
-  
-  function showResults() {
-    document.querySelector('.quiz-container').innerHTML = `<div>Your final score is: ${score}</div>`;
-    // Optionally reset the quiz or offer options to restart or leave
-  }
+  });
 
+  // Correctly update the next question ID
+  if (questionData.next_question) {
+      currentQuestionNumber = questionData.next_question; // Ensure this is a string if your keys are strings
+  } else {
+      console.log("No next question specified, showing results.");
+      showResults();
+  }
+}
 
-  function sendResults() {
+function drag(event) {
+  console.log("Dragging item:", event.target.id);
+  event.dataTransfer.setData("text/plain", event.target.id);
+}
+function showResults() {
+  const quizContainer = document.querySelector('.quiz-container');
+  quizContainer.innerHTML = '<div>Your final score is: ' + score + '</div>';
+}
+
+function sendResults() {
     let answers = {};
     Object.keys(quizData).forEach(key => {
         answers[key] = quizData[key]['user_answer'];
@@ -113,7 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = '/results?score=' + response.score + '&total_questions=' + response.total_questions;
         },
         error: function(xhr) {
-            console.log('Error submitting quiz results', xhr);
+            console.error('Error submitting quiz results', xhr);
         }
     });
-  }
+}
