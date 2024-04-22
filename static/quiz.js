@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function loadNextQuestion() {
   console.log("Before loading new question - Current question ID:", currentQuestionNumber);
-  const questionData = quizData[currentQuestionNumber];
+  const questionData = quizData[currentQuestionNumber.toString()]; // Ensure the key is accessed as a string
 
   if (!questionData) {
       console.log("No more questions available.");
@@ -54,7 +54,6 @@ function loadNextQuestion() {
 
   console.log("Loading question ID:", currentQuestionNumber);
   console.log("Current question data:", questionData);
-
 
   // Update the question text and image
   document.querySelector('.question').textContent = questionData.question;
@@ -85,14 +84,17 @@ function loadNextQuestion() {
       wineChoicesContainer.appendChild(wineChoiceElement);
   });
 
-  // Correctly update the next question ID
-  if (questionData.next_question) {
-      currentQuestionNumber = questionData.next_question; // Ensure this is a string if your keys are strings
-  } else {
-      console.log("No next question specified, showing results.");
-      showResults();
-  }
+  setTimeout(() => {
+    const nextQuestionButton = document.querySelector('#next-question-btn');
+    if (questionData.next_question) {
+      currentQuestionNumber = questionData.next_question;
+      nextQuestionButton.style.display = 'block'; // Show next question button after a delay
+    } else {
+      showResults(); // End of quiz
+    }
+  }, 500); // Delay of 500ms for demonstration, adjust as needed
 }
+
 
 function drag(event) {
   console.log("Dragging item:", event.target.id);
