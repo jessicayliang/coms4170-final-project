@@ -30,6 +30,10 @@ body{
     background-color: floralwhite;
 }
 
+.learn-font{
+    font-family: "Gill Sans";
+}
+
 .navbar-text-color {
     color: floralwhite;
 }
@@ -39,6 +43,29 @@ body{
     font-size: large;
     line-height: 2;
 
+}
+
+.image-container {
+    position: relative;
+    display: inline-block; /* Makes the container fit the size of the image */
+}
+
+.hover-text {
+    position: absolute;
+    top: 10%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Perfect centering */
+    display: none;
+    color: white; /* Text color */
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black background */
+    padding: 8px;
+    border-radius: 10px;
+    white-space: nowrap; /* Ensures the text is on a single line */
+    font-family: "Gill Sans";
+}
+
+.image-container:hover .hover-text {
+    display: block; /* Show the text box on hover */
 }
 
 .next-button{
