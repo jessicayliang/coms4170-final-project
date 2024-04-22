@@ -2,11 +2,15 @@ import json
 import random
 import re
 import sys
+import os
 
 from flask import Flask, redirect, url_for
 from flask import render_template
 from flask import Response, request, jsonify
 from markupsafe import Markup
+
+app = Flask(__name__)
+
 
 user_learn_info = {
     'time_started': None,
@@ -34,9 +38,11 @@ def get_next_wine_id(cur_wine_id: int) -> str:
     return str(cur_wine_id + 1)
 
 def load_quiz():
-    with open('quiz.json') as file:
+    file_path = os.path.join(app.static_folder, 'quiz.json')
+    with open(file_path) as file:
         quiz_data = json.load(file)
     return quiz_data
+
 
 def get_next_quiz_id(current_id):
     # Logic to get the next quiz ID
@@ -48,8 +54,6 @@ wines = load_wines()
 quizzes = load_quiz()
 for wine_id, wine_details in wines.items():
     wine_details['seen'] = False
-
-app = Flask(__name__)
 
 
 # ROUTES
@@ -79,13 +83,11 @@ def all_wines():
 
 @app.route('/quiz/<quiz_num>')
 def quiz(quiz_num):
-    quiz_to_render = quizzes.get(quiz_num) # quizzes should be your dictionary of all quiz data
+    quiz_to_render = quizzes.get(quiz_num)
     if not quiz_to_render:
-        # Handle the case where the quiz number does not exist
         return "Quiz not found", 404
     next_id = get_next_quiz_id(quiz_num)
     return render_template('quiz.html', quiz=quiz_to_render, next_id=next_id)
-
 
 @app.route('/learn/record/time', methods=["POST"])
 def record_time():

@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+
+{% block content %}
+<div class="container text-center mt-5">
+    <h2>Quiz Results</h2>
+    <p>Your Score: {{ score }} out of {{ total_questions }}</p>
+    <a href="/" class="btn btn-primary">Try Again</a>
+</div>
+{% endblock %}
