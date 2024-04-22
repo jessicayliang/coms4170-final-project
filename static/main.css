@@ -9,8 +9,7 @@ body{
     align-items: center;
     background-color: #333;
     color: white;
-    padding: 10px 20px; /* Padding around the entire navbar */
-    font-family: "Gill Sans";
+    padding: 10px 20px; /* Padding around the entire navbar */;
 }
 
 .home-description {
@@ -87,7 +86,6 @@ body{
     padding: 2px ;
     margin-left: 40px;
     color: floralwhite;
-    font-size: 56px;
 }
 
 .home-background-img {
@@ -104,4 +102,15 @@ body{
     font-family: "Fraunces", serif; 
     font-weight: 500;
     color: floralwhite
+}
+
+.main-font {
+    font-family: "Fraunces", serif; 
+    font-weight: 650;
+    color: floralwhite;
+    font-size: 70px;
+}
+
+.body-font {
+    font-family: 'Inter', sans-serif;
 }
