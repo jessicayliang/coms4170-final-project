@@ -84,4 +84,19 @@
     font-family: 'Inter', sans-serif;
 }
 
+.start-button {
+    background-color: floralwhite;
+    border: none;
+    color: black;
+    margin: 40px;
+    display: block;
+}
+
+.start-button:hover {
+    background-color: navajowhite;
+}
+
+.score-box {
+color: floralwhite;
+margin-top: 50px;}
 

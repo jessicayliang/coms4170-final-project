@@ -1,9 +1,25 @@
 {% extends "layout.html" %}
 
 {% block content %}
-<div class="container text-center mt-5">
-    <h2>Quiz Results</h2>
-    <p>Your Score: {{ score }} out of {{ total_questions }}</p>
-    <a href="/" class="btn btn-primary">Try Again</a>
+<link rel="stylesheet" href="{{ url_for('static', filename='quiz.css') }}">
+<!-- Add any other CSS you need for your quiz here -->
+
+<div class="container text-center mt-5 body-font  score-box">
+    <!-- Separate the heading and score into different rows for clear separation -->
+    <div class="row justify-content-center score-box">
+        <div class="col-4">
+            <h2>Quiz Results</h2>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-4">
+            <p>Your Score: {{ score }} out of {{ total_questions }}</p>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-4">
+            <a href="/learn/1" class="btn btn-lg start-button">Go Back to Learning</a>
+        </div>
+    </div>
 </div>
 {% endblock %}
