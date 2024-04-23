@@ -23,8 +23,19 @@ document.addEventListener('DOMContentLoaded', () => {
     dropArea.addEventListener('drop', function(event) {
         event.preventDefault();
         event.stopPropagation();
-        console.log("Drop event: item dropped:", event.dataTransfer.getData("text"));
-        event.target.style.backgroundColor = 'red';
+        const droppedWine = event.dataTransfer.getData("text");
+        console.log("Drop event: item dropped:", droppedWine);
+
+        const correctAnswer = quizData[currentQuestionNumber].correct_answer.wine;
+        if (droppedWine === correctAnswer) {
+            quizData[currentQuestionNumber].is_correct = 1; // Mark as correct
+            score += 1; // Increment the score
+            console.log(`Correct! Score updated to ${score}`);
+        } else {
+            quizData[currentQuestionNumber].is_correct = 0; // Mark as incorrect
+            console.log(`Incorrect. Correct answer was ${correctAnswer}. Score remains ${score}`);
+        }
+
         nextQuestionButton.style.display = 'block';
     });
 
@@ -47,47 +58,44 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 function loadNextQuestion() {
-  console.log("Loading new question - Current question ID:", currentQuestionNumber);
-  const questionData = quizData[currentQuestionNumber];
-
-  if (!questionData) {
-      console.log("No more questions available.");
-      showResults();
-      return;
+    console.log("Loading new question - Current question ID:", currentQuestionNumber);
+    const questionData = quizData[currentQuestionNumber];
+  
+    if (!questionData) {
+        console.log("No more questions available.");
+        showResults();
+        return;
+    }
+  
+    document.querySelector('.question').textContent = questionData.question;
+    const foodImage = document.querySelector('.food-pairing img');
+    foodImage.src = questionData.food_pairing.image_url;
+    foodImage.alt = questionData.food_pairing.description;
+    foodImage.draggable = false;
+  
+    const wineChoicesContainer = document.querySelector('.wine-choices');
+    wineChoicesContainer.innerHTML = '';
+  
+    questionData.wine_choices.forEach(choice => {
+        const wineChoiceElement = document.createElement('div');
+        wineChoiceElement.classList.add('wine-choice');
+        wineChoiceElement.draggable = true;
+        wineChoiceElement.id = choice.wine;
+        wineChoiceElement.setAttribute('ondragstart', 'drag(event)');
+  
+        const image = document.createElement('img');
+        image.src = choice.image_url;
+        image.alt = choice.wine;
+  
+        const label = document.createElement('p');
+        label.textContent = choice.wine;
+  
+        wineChoiceElement.appendChild(image);
+        wineChoiceElement.appendChild(label);
+        wineChoicesContainer.appendChild(wineChoiceElement);
+    });
   }
 
-  // Update the question text
-  document.querySelector('.question').textContent = questionData.question;
-
-  // Set the food image source, alt text, and ensure it is not draggable
-  const foodImage = document.querySelector('.food-pairing img');
-  foodImage.src = questionData.food_pairing.image_url;
-  foodImage.alt = questionData.food_pairing.description;
-  foodImage.draggable = false; // Ensure the food image is not draggable
-
-  // Clear and populate wine choices
-  const wineChoicesContainer = document.querySelector('.wine-choices');
-  wineChoicesContainer.innerHTML = '';
-
-  questionData.wine_choices.forEach(choice => {
-      const wineChoiceElement = document.createElement('div');
-      wineChoiceElement.classList.add('wine-choice');
-      wineChoiceElement.draggable = true; // Ensure only wine choices are draggable
-      wineChoiceElement.id = choice.wine;
-      wineChoiceElement.setAttribute('ondragstart', 'drag(event)');
-
-      const image = document.createElement('img');
-      image.src = choice.image_url;
-      image.alt = choice.wine;
-
-      const label = document.createElement('p');
-      label.textContent = choice.wine;
-
-      wineChoiceElement.appendChild(image);
-      wineChoiceElement.appendChild(label);
-      wineChoicesContainer.appendChild(wineChoiceElement);
-  });
-}
 
 function drag(event) {
     console.log("Dragging item:", event.target.id);
@@ -95,6 +103,7 @@ function drag(event) {
 }
 
 function showResults() {
+  console.log(`Final Score: ${score} out of ${Object.keys(quizData).length}`);
   window.location.href = `/results?score=${score}&total_questions=${Object.keys(quizData).length}`;
 }
-
+  
