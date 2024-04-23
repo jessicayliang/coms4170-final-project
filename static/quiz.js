@@ -23,10 +23,21 @@ document.addEventListener('DOMContentLoaded', () => {
   dropArea.addEventListener('drop', function(event) {
     event.preventDefault();
     event.stopPropagation();
-    console.log("Drop event: item dropped:", event.dataTransfer.getData("text"));
-    event.target.style.backgroundColor = 'red';
+    let droppedWine = event.dataTransfer.getData("text");
+    console.log("Drop event: item dropped:", droppedWine);
+
+    // Update the background color to indicate correct or incorrect drop
+    if (quizData[currentQuestionNumber.toString()].correct_answer.wine === droppedWine) {
+        event.target.style.backgroundColor = 'green'; // Correct choice
+        quizData[currentQuestionNumber.toString()].is_correct = 1; // Mark as correct
+        score++; // Increment score
+    } else {
+        event.target.style.backgroundColor = 'red'; // Incorrect choice
+        quizData[currentQuestionNumber.toString()].is_correct = 0; // Mark as incorrect
+    }
     nextQuestionButton.style.display = 'block';
 });
+
 
   nextQuestionButton.addEventListener('click', function(event) {
       event.preventDefault();
@@ -111,18 +122,21 @@ function showResults() {
 
 
 function sendResults() {
+  let answers = {};
+  Object.keys(quizData).forEach(key => {
+      answers[key] = quizData[key]['user_answer'];
+  });
+
   let totalCorrect = Object.values(quizData).reduce((acc, curr) => acc + (curr.is_correct || 0), 0);
   let totalQuestions = Object.keys(quizData).length;
 
-  // AJAX POST to a Flask route that handles results
   $.ajax({
       type: 'POST',
       url: '/submit_quiz',
       contentType: 'application/json',
-      data: JSON.stringify({ score: totalCorrect, totalQuestions: totalQuestions }),
+      data: JSON.stringify({ score: totalCorrect, totalQuestions: totalQuestions, answers: answers }),
       success: function(response) {
-          // Assuming the server responds with the URL to redirect to
-          window.location.href = response.url; // Correctly handle the URL redirection
+          window.location.href = response.url; // Make sure the server sends back the correct URL
       },
       error: function(xhr) {
           console.error('Error submitting quiz results', xhr);
@@ -130,4 +144,3 @@ function sendResults() {
   });
 }
 
-th
