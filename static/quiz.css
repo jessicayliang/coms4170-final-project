@@ -100,3 +100,14 @@
 color: floralwhite;
 margin-top: 50px;}
 
+.score-no {
+color: black;
+background-color: #fff7dd;
+font-weight:700;
+font-size: 45px;
+border-radius: 20px;
+margin-top: 10px;
+padding-top: 10px;
+
+}
+
