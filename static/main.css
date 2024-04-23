@@ -197,3 +197,10 @@ body{
 .body-font {
     font-family: 'Inter', sans-serif;
 }
+#wine-img {
+    max-width: 200px;
+    max-height: 200px;
+    width: auto;  /* Ensures the width is auto-adjusted according to the max width */
+    height: auto; /* Ensures the height is auto-adjusted according to the max height */
+    /*display: block; !* Removes extra space below the image *!*/
+}
