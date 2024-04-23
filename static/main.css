@@ -1,5 +1,5 @@
 
-body{
+body {
     background-color: #353B14;
 }
 
@@ -9,22 +9,7 @@ body{
     align-items: center;
     background-color: #333;
     color: white;
-    padding: 10px 20px; 
-}
-
-.home-description {
-    font-family: Palatino, sans-serif;
-    font-style: italic;
-    font-size: 6em; 
-    color: floralwhite;
-    text-align: center;
-    padding: 0; 
-    margin: 0;
-    position: absolute; 
-    top: 55%; 
-    left: 50%; 
-    transform: translate(-50%, -50%); 
-    width: 100%; 
+    padding: 10px 20px;
 }
 
 
@@ -32,14 +17,14 @@ body{
     background-color: #353B14;
 }
 
-.learn-backgroundcolor{
+.learn-backgroundcolor {
     background-color: floralwhite;
     min-height: 35em;
     border-radius: 0 0 5px 5px;
-    display: flex;           /* Establishes this element as a flex container */
-    flex-direction: column;  /* Stacks children vertically */
+    display: flex; /* Establishes this element as a flex container */
+    flex-direction: column; /* Stacks children vertically */
     justify-content: space-between; /* Aligns children with space between them */
-    height: 100%;            /* Ensures the container takes full height, adjust as needed */
+    height: 100%; /* Ensures the container takes full height, adjust as needed */
 }
 
 #button-row {
@@ -48,18 +33,18 @@ body{
     justify-content: space-between;
 }
 
-.learn-font{
+.learn-font {
     font-family: "Gill Sans";
 }
 
 .navbar-text-color {
     color: floralwhite;
-    font-size: 10px;
-    position: center;
+    font-size: 20px;
+    /*position: center;*/
 }
 
-.navbar-container{
-    justify-content: center;
+.navbar-container {
+    /*justify-content: center;*/
     width: 100%; /* Ensures the navbar spans the full width */
     padding-left: 0; /* Removes any padding on the left */
     padding-right: 0;
@@ -72,8 +57,17 @@ body{
 
 .navbar-nav {
     display: flex; /* Enables flex properties for the navbar */
-    justify-content: center; /* This will center the nav items */
+    /*justify-content: center; !* This will center the nav items *!*/
     width: 100%; /* Ensures nav takes the full width of its parent */
+
+}
+
+#detailed-nav {
+    flex-direction: row-reverse !important;
+}
+
+#link-box {
+    margin-right: 5em;
 }
 
 .nav-link {
@@ -84,7 +78,7 @@ body{
 }
 
 .nav-item:not(:last-child) {
-    margin-right: 8em; /* Add space to the right of each link, except the last one */
+    margin-right: 6em; /* Add space to the right of each link, except the last one */
 }
 
 .content-container {
@@ -103,25 +97,11 @@ body{
 }
 
 
-.hover-text {
-    position: absolute;
-    top: 10%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Perfect centering */
-    display: none;
-    color: white; /* Text color */
-    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black background */
-    padding: 8px;
-    border-radius: 10px;
-    white-space: nowrap; /* Ensures the text is on a single line */
-    font-family: "Gill Sans";
-}
-
 .image-container:hover .hover-text {
     display: block; /* Show the text box on hover */
 }
 
-.next-button{
+.next-button {
     background-color: lightsteelblue;
     border: none;
     color: black;
@@ -145,50 +125,15 @@ body{
     background-color: lightblue;
 }
 
-.start-button {
-    /*text-align: left;*/
-    background-color: floralwhite;
-    border: none;
-    color: black;
-    margin: 40px;
-}
-
-.start-button:hover {
-    background-color: navajowhite;
-}
-
-.footer {
-    font-family: "Fraunces", serif; 
-    font-weight: 650;
-    position: absolute; 
-    bottom: 50px; 
-    left: 50px; 
-    font-size: 4em; 
-    color: floralwhite; 
-    z-index: 10; 
-    margin: 0; 
-    padding: 0; 
-}
-
-.home-background-img {
-    width: 50vw;
-    height: 100vh; 
-    position: fixed; 
-    top: 0;
-    left: 0;
-    z-index: -1;
-    background-size: cover;
-    background-position: center;
-}
 
 .title-font {
-    font-family: "Fraunces", serif; 
+    font-family: "Fraunces", serif;
     font-weight: 500;
     color: floralwhite
 }
 
 .main-font {
-    font-family: "Fraunces", serif; 
+    font-family: "Fraunces", serif;
     font-weight: 650;
     color: floralwhite;
     font-size: 70px;
@@ -196,4 +141,11 @@ body{
 
 .body-font {
     font-family: 'Inter', sans-serif;
+}
+
+#wine-img {
+    max-width: 200px;
+    max-height: 200px;
+    width: auto;
+    height: auto;
 }
