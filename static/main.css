@@ -96,8 +96,27 @@ body {
     height: 100vh; /* Ensures the container takes up the full height of the viewport */
 }
 
+.image-container-blank {
+    position: relative;
+    display: inline-block; /* Makes the container fit the size of the image */
+}
 
-.image-container:hover .hover-text {
+
+.hover-text {
+    position: absolute;
+    top: 10%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Perfect centering */
+    display: none;
+    color: white; /* Text color */
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black background */
+    padding: 8px;
+    border-radius: 10px;
+    white-space: nowrap; /* Ensures the text is on a single line */
+    font-family: "Gill Sans";
+}
+
+.image-container-blank:hover .hover-text {
     display: block; /* Show the text box on hover */
 }
 
