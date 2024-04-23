@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block content %}
+
+    <div class="content-container">
+        <div class="backgroundcolor">
+            <div class="content-container learn-backgroundcolor">
+            <div class="row">
+                {% for wine_num, details in wines.items() %}
+                    <div class="col-2">
+                        <div class="image-container-blank">
+                            <a href={{ "/learn/" + wine_num }}>
+                                <img class='img-fluid' src="{{ details.wine_img }}" alt="glass of {{ details.wine_name }}">
+                                <span class="hover-text">{{ details.wine_name }}</span>
+                            </a>
+                        </div>
+
+                    </div>
+                {% endfor %}
+            </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
