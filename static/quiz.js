@@ -89,7 +89,6 @@ function loadNextQuestion() {
   });
 }
 
-
 function drag(event) {
     console.log("Dragging item:", event.target.id);
     event.dataTransfer.setData("text/plain", event.target.id);
