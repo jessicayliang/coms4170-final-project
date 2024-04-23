@@ -46,7 +46,7 @@ function loadNextQuestion() {
 
   if (!questionData) {
       console.log("No more questions available.");
-      showResults(); // Show results if no more questions
+      sendResults(); // Send results instead of showing them directly
       return;
   }
 
@@ -83,19 +83,20 @@ function loadNextQuestion() {
   });
 
   setTimeout(() => {
-    const nextQuestionButton = document.querySelector('#next-question-btn');
-    if (questionData.next_question) {
-      currentQuestionNumber = questionData.next_question;
-      nextQuestionButton.style.display = 'block'; // Show next question button after a delay
-    } else {
-      nextQuestionButton.style.display = 'block';
-      nextQuestionButton.textContent = 'Show Results'; // Change button text for the last question
-      nextQuestionButton.onclick = () => { // Change event handler for the last question
-        showResults();
-      };
-    }
+      const nextQuestionButton = document.querySelector('#next-question-btn');
+      if (questionData.next_question) {
+          currentQuestionNumber = questionData.next_question;
+          nextQuestionButton.style.display = 'block'; // Show next question button after a delay
+      } else {
+          nextQuestionButton.style.display = 'block';
+          nextQuestionButton.textContent = 'Show Results'; // Change button text for the last question
+          nextQuestionButton.onclick = () => {
+              sendResults(); // Change event handler to send results
+          };
+      }
   }, 500); // Maintain the 500ms delay for UI consistency
 }
+
 
 
 function drag(event) {
@@ -110,22 +111,22 @@ function showResults() {
 
 
 function sendResults() {
-  let answers = {};
-  Object.keys(quizData).forEach(key => {
-      answers[key] = quizData[key]['user_answer']; // Assuming you are tracking user answers somewhere in your quizData object
-  });
+  let totalCorrect = Object.values(quizData).reduce((acc, curr) => acc + (curr.is_correct || 0), 0);
+  let totalQuestions = Object.keys(quizData).length;
 
   // AJAX POST to a Flask route that handles results
   $.ajax({
       type: 'POST',
-      url: '/submit_quiz', // This should be the route in your Flask app that processes results
+      url: '/submit_quiz',
       contentType: 'application/json',
-      data: JSON.stringify({answers: answers, score: score, totalQuestions: Object.keys(quizData).length}),
+      data: JSON.stringify({ score: totalCorrect, totalQuestions: totalQuestions }),
       success: function(response) {
-          window.location.href = '/results'; // Redirect to results page rendered by Flask
+          // Assuming the server responds with the URL to redirect to
+          window.location.href = response.url; // Correctly handle the URL redirection
       },
       error: function(xhr) {
           console.error('Error submitting quiz results', xhr);
       }
   });
 }
+

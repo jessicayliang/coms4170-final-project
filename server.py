@@ -101,18 +101,18 @@ def record_time():
 @app.route('/submit_quiz', methods=['POST'])
 def submit_quiz():
     data = request.get_json()
-    score = data.get('score')
-    total_questions = data.get('totalQuestions')
-    answers = data.get('answers')
-    
+    score = data['score']
+    total_questions = data['totalQuestions']
+    # Optionally save or process data here
+    return jsonify({'url': url_for('quiz_results', score=score, total_questions=total_questions)})
 
-    return redirect(url_for('quiz_results', score=score, total_questions=total_questions))
 
 @app.route('/results')
 def quiz_results():
-    score = request.args.get('score')
-    total_questions = request.args.get('total_questions')
-    return render_template('quiz_results.html', score=score, total_questions=total_questions)
+    score = request.args.get('score', default=0, type=int)
+    total_questions = request.args.get('total_questions', default=0, type=int)
+    return render_template('quiz_result.html', score=score, total_questions=total_questions)
+
 
 
 
