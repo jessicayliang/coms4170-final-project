@@ -107,5 +107,23 @@ def record_time():
     return jsonify({'redirect': url_for('learn', wine_num='1'), 'time_started': user_learn_info['time_started']})
 
 
+@app.route('/submit_quiz', methods=['POST'])
+def submit_quiz():
+    data = request.get_json()
+    score = data.get('score')
+    total_questions = data.get('totalQuestions')
+    answers = data.get('answers')
+    
+
+    return redirect(url_for('quiz_results', score=score, total_questions=total_questions))
+
+@app.route('/results')
+def quiz_results():
+    score = request.args.get('score')
+    total_questions = request.args.get('total_questions')
+    return render_template('quiz_results.html', score=score, total_questions=total_questions)
+
+
+
 if __name__ == '__main__':
     app.run(debug=True, port=3200)

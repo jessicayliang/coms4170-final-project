@@ -102,27 +102,30 @@ function drag(event) {
   console.log("Dragging item:", event.target.id);
   event.dataTransfer.setData("text/plain", event.target.id);
 }
+
 function showResults() {
-  const quizContainer = document.querySelector('.quiz-container');
-  quizContainer.innerHTML = '<div>Your final score is: ' + score + '</div>';
+  // Redirect to quiz_results.html with score and total questions as URL parameters
+  window.location.href = `/quiz_results.html?score=${score}&total_questions=${Object.keys(quizData).length}`;
 }
 
-function sendResults() {
-    let answers = {};
-    Object.keys(quizData).forEach(key => {
-        answers[key] = quizData[key]['user_answer'];
-    });
 
-    $.ajax({
-        type: 'POST',
-        url: '/submit_quiz',
-        contentType: 'application/json',
-        data: JSON.stringify(answers),
-        success: function(response) {
-            window.location.href = '/results?score=' + response.score + '&total_questions=' + response.total_questions;
-        },
-        error: function(xhr) {
-            console.error('Error submitting quiz results', xhr);
-        }
-    });
+function sendResults() {
+  let answers = {};
+  Object.keys(quizData).forEach(key => {
+      answers[key] = quizData[key]['user_answer']; // Assuming you are tracking user answers somewhere in your quizData object
+  });
+
+  // AJAX POST to a Flask route that handles results
+  $.ajax({
+      type: 'POST',
+      url: '/submit_quiz', // This should be the route in your Flask app that processes results
+      contentType: 'application/json',
+      data: JSON.stringify({answers: answers, score: score, totalQuestions: Object.keys(quizData).length}),
+      success: function(response) {
+          window.location.href = '/results'; // Redirect to results page rendered by Flask
+      },
+      error: function(xhr) {
+          console.error('Error submitting quiz results', xhr);
+      }
+  });
 }
