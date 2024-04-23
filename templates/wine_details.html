@@ -3,7 +3,13 @@
 
     <!-- Script to debug & log which wines are seen -->
     <script src="{{ url_for('static', filename='seenWineTracker.js') }}"></script>
+
     <div class="content-container">
+        <div class="progress" role="progressbar" aria-label="wines-seen" aria-valuenow="{{ curr_id }}" aria-valuemin="0"
+             aria-valuemax="10" style="height: 3px">
+            <div class="progress-bar" style="width: {{ (curr_id | float  / 10.0 * 100)|string }}%"></div>
+        </div>
+
         <div class="backgroundcolor">
             <div class="content-container learn-backgroundcolor learn-font">
                 <div class="row">
@@ -19,7 +25,7 @@
 
                         <div class="row">
                             {% for k, v in wine.pairs_with.items() %}
-                                <div class="col-2">
+                                <div class="col-3">
                                     <img class='img-fluid' src="{{ v }}" alt="{{ k }}">
                                     {{ k }}
                                 </div>
@@ -27,13 +33,19 @@
                         </div>
                     </div>
                 </div>
-                <div class="row">
+                <div id='button-row' class="row">
                     <div class="col-6">
                         {% set converted_prev_id = prev_id | int %}
                         {% if converted_prev_id > 0 %}
                             <a href={{ "/learn/" + prev_id }}>
                                 <button id="back-btn" class="btn btn-primary back-button"><i
                                         class="bi bi-arrow-left"></i> Back
+                                </button>
+                            </a>
+                        {% else %}
+                            <a href="/">
+                                <button id="home-btn" class="btn btn-primary back-button"><i
+                                        class="bi bi-arrow-left"></i> Home
                                 </button>
                             </a>
                         {% endif %}
