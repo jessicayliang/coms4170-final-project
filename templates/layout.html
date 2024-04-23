@@ -21,13 +21,14 @@
     <!--Title font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:wght@500&display=swap" rel="stylesheet">  
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:wght@500&display=swap"
+          rel="stylesheet">
 
     <!--Body font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
-    
+
 </head>
 <body class="body-font">
 
@@ -41,17 +42,16 @@
 
         {#  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">#}
         <div class="col-7">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active col">
-{#                    <a class="nav-link" href="/">home</a>#}
-                </li>
-                <li class="nav-item col">
-                    <a class="nav-link navbar-text-color" href="/learn/1">wine profile</a>
-                </li>
-                <li class="nav-item col">
-                    <a class="nav-link navbar-text-color" href="/quiz/1">quiz</a>
-                </li>
-            </ul>
+            <div id='detailed-nav' class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <div id='link-box' class="d-flex justify-content-end">
+                    <div class="nav-item ">
+                        <a class="nav-link navbar-text-color" href="/learn/1">wine profile</a>
+                    </div>
+                    <div class="nav-item ">
+                        <a class="nav-link navbar-text-color" href="/quiz/1">quiz</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

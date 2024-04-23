@@ -1,0 +1,67 @@
+.navbar-nav {
+    display: flex; /* Enables flex properties for the navbar */
+    justify-content: center; /* This will center the nav items */
+    width: 100%; /* Ensures nav takes the full width of its parent */
+}
+.home-background-img {
+    width: 50vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-size: cover;
+    background-position: center;
+}
+
+.home-description {
+    font-family: Palatino, sans-serif;
+    font-style: italic;
+    font-size: 6em;
+    color: floralwhite;
+    text-align: center;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+}
+
+.hover-text {
+    position: absolute;
+    top: 10%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Perfect centering */
+    display: none;
+    color: white; /* Text color */
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent black background */
+    padding: 8px;
+    border-radius: 10px;
+    white-space: nowrap; /* Ensures the text is on a single line */
+    font-family: "Gill Sans", sans-serif;
+}
+.footer {
+    font-family: "Fraunces", serif;
+    font-weight: 650;
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    font-size: 4em;
+    color: floralwhite;
+    z-index: 10;
+    margin: 0;
+    padding: 0;
+}
+.start-button {
+    /*text-align: left;*/
+    background-color: floralwhite;
+    border: none;
+    color: black;
+    margin: 40px;
+}
+
+.start-button:hover {
+    background-color: navajowhite;
+}
