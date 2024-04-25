@@ -5,18 +5,6 @@
         <div class="backgroundcolor">
             <div class="content-container learn-backgroundcolor">
                 <div id='wine-display' class="row">
-                    {% for wine_num, details in wines.items() %}
-                        <div class="col-2">
-                            <div class="image-container-blank modal-trigger" data-toggle="modal"
-                                 data-target="modal_{{ wine_num | string }}">
-                                <img data-wine-id="{{ wine_num }}" id='glass{{ wine_num }}' class='img-fluid'
-                                     src="{{ details.wine_img }}"
-                                     alt="glass of {{ details.wine_name }}">
-                                <span class="hover-text">{{ details.wine_name }}</span>
-                            </div>
-
-                        </div>
-                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -27,7 +15,7 @@
         {% for wine_num, details in wines.items() %}
             <div class="modal fade" id="modal_{{ wine_num|string }}" tabindex="-1" role="dialog"
                  aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-dialog modal-lg modal-dialog-centered" style="width: 90%" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title" id="exampleModalLongTitle">{{ details['wine_name'] }}</h5>
@@ -36,7 +24,26 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            {{ details['description'] }}
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-3">
+                                        <img class="wine-glass img-fluid" src="{{ details['wine_img'] }}">
+                                    </div>
+                                    <div class="col">
+                                        {{ details['description'] }}
+                                    </div>
+                                </div>
+                            <br/>
+                                <div class="row">
+                                    {% for pairing, img in details['pairs_with'].items() %}
+                                        <div class="col">
+                                            <img class="img-fluid" src="{{ img }}">
+                                            <span class="caption">{{ pairing }}</span>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>

@@ -157,7 +157,7 @@ body {
     font-family: 'Inter', sans-serif;
 }
 
-#wine-img {
+.wine-glass {
     max-width: 200px;
     max-height: 200px;
     width: auto;
@@ -167,4 +167,9 @@ body {
 .dimmed {
   opacity: 0.25;
   transition: opacity 0.3s ease;
+}
+
+#wine-display{
+    justify-content: center;
+    gap: 90px 10px;
 }

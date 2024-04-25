@@ -1,4 +1,4 @@
-// file for managing the popups for modals
+// file for managing the popups for modals, as well as the wine image dimming
 let wines;
 $(document).ready(() => {
     refreshAllImages();
@@ -16,12 +16,13 @@ $(document).ready(() => {
                     // console.log(details['seen'])
                     let imgClass = details['seen'] ? 'img-fluid dimmed' : 'img-fluid';
                     let wineHtml = `
-                    <div class="col-2">
+                    <div class="col">
                         <div class="image-container-blank modal-trigger" data-toggle="modal"
                              data-target="#modal_${wine_num}">
-                            <img data-wine-id="${wine_num}" id='glass${wine_num}' class='${imgClass}'
+                            <img data-wine-id="${wine_num}" id='glass${wine_num}' class='${imgClass} wine-glass' 
                                  src="${details.wine_img}"
                                  alt="glass of ${details.wine_name}">
+                               
                             <span class="hover-text">${details.wine_name}</span>
                         </div>
                     </div>`;
