@@ -1,15 +1,16 @@
 {% extends "layout.html" %}
 {% block content %}
-<script src="{{ url_for('static', filename='modalManager.js') }}"></script>
+    <script src="{{ url_for('static', filename='modalManager.js') }}"></script>
     <div class="content-container">
         <div class="backgroundcolor">
             <div class="content-container learn-backgroundcolor">
-                <div class="row">
+                <div id='wine-display' class="row">
                     {% for wine_num, details in wines.items() %}
                         <div class="col-2">
                             <div class="image-container-blank modal-trigger" data-toggle="modal"
                                  data-target="modal_{{ wine_num | string }}">
-                                <img id='glass{{ wine_num }}' class='img-fluid' src="{{ details.wine_img }}"
+                                <img data-wine-id="{{ wine_num }}" id='glass{{ wine_num }}' class='img-fluid'
+                                     src="{{ details.wine_img }}"
                                      alt="glass of {{ details.wine_name }}">
                                 <span class="hover-text">{{ details.wine_name }}</span>
                             </div>
@@ -22,25 +23,27 @@
     </div>
 
     <!-- Modals -->
-    {% for wine_num, details in wines.items() %}
-        <div class="modal fade" id="modal_{{ wine_num|string }}" tabindex="-1" role="dialog"
-             aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">{{ details['wine_name'] }}</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        {{ details['description'] }}
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
+    <div id="modal-container">
+        {% for wine_num, details in wines.items() %}
+            <div class="modal fade" id="modal_{{ wine_num|string }}" tabindex="-1" role="dialog"
+                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">{{ details['wine_name'] }}</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            {{ details['description'] }}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Ok</button>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    {% endfor %}
+        {% endfor %}
+    </div>
 {% endblock %}

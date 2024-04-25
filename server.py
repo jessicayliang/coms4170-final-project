@@ -64,9 +64,11 @@ def home():
 
 @app.route('/getwines')
 def get_wines():
-    """
-    For debugging. Get the current state of wines.
-    """
+    return jsonify(wines)
+
+@app.route('/mark_as_seen/<wine_id>')
+def mark_as_seen(wine_id):
+    wines[wine_id]['seen'] = True
     return jsonify(wines)
 
 @app.route('/learn/<wine_num>')
