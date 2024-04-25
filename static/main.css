@@ -20,7 +20,7 @@ body {
 .learn-backgroundcolor {
     background-color: floralwhite;
     min-height: 35em;
-    border-radius: 0 0 5px 5px;
+    border-radius: 5px;
     display: flex; /* Establishes this element as a flex container */
     flex-direction: column; /* Stacks children vertically */
     justify-content: space-between; /* Aligns children with space between them */
@@ -31,10 +31,6 @@ body {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-}
-
-.learn-font {
-    font-family: "Gill Sans";
 }
 
 .navbar-text-color {
@@ -113,7 +109,6 @@ body {
     padding: 8px;
     border-radius: 10px;
     white-space: nowrap; /* Ensures the text is on a single line */
-    font-family: "Gill Sans";
 }
 
 .image-container-blank:hover .hover-text {
