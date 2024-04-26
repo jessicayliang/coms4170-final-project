@@ -11,7 +11,11 @@ body {
     color: white;
     padding: 10px 20px;
 }
-
+.navbar-font {
+    font-family: "Fraunces", serif;
+    font-weight: 300;
+    color: floralwhite
+}
 
 .backgroundcolor {
     background-color: #353B14;
@@ -172,4 +176,18 @@ body {
 #wine-display{
     justify-content: center;
     gap: 90px 10px;
+}
+
+.title-container {
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 12px rgba(0.0.0.0.1);
+    display: inline-block;
+    position: absolute;
+    bottom: 20px;
+    left: 250px;
+    color: floralwhite;
+    z-index: 10;
+    font-family: "Gill Sans";
+    color: black;
 }
