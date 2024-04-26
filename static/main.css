@@ -119,6 +119,10 @@ body {
     display: block; /* Show the text box on hover */
 }
 
+.image-container-blank:hover {
+    cursor: pointer;
+}
+
 .next-button {
     background-color: lightsteelblue;
     border: none;
@@ -129,6 +133,7 @@ body {
 
 .next-button:hover {
     background-color: lightblue;
+    cursor: pointer;
 }
 
 .back-button {
@@ -141,6 +146,7 @@ body {
 
 .back-button:hover {
     background-color: lightblue;
+    cursor: pointer;
 }
 
 
