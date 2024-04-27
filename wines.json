@@ -8,7 +8,8 @@
       "salmon": "https://static01.nyt.com/images/2024/01/05/multimedia/SSE-horseredish-salmon-hcbf/SSE-horseredish-salmon-hcbf-master768.jpg?w=1280&q=75"
     },
     "wine_img": "https://purepng.com/public/uploads/large/purepng.com-wine-glassglasswine-glasstransparenttumblercrystal-1701528306623boyu2.png",
-    "next_wine": "Pinot Grigio"
+    "next_wine": "Pinot Grigio",
+    "type": "red"
   },
   "2": {
     "wine_name": "Pinot Grigio",
@@ -19,7 +20,8 @@
       "risotto": "https://static01.nyt.com/images/2024/01/10/multimedia/10Risotto-gcmz/10Risotto-gcmz-master768.jpg?w=1280&q=75"
     },
     "wine_img": "https://ezprod.us-east-1.linodeobjects.com/product/1544642315322-1.png.webp",
-    "next_wine": "Rose"
+    "next_wine": "Rose",
+    "type": "white"
   },
   "3": {
     "wine_name": "Rose",
@@ -30,7 +32,8 @@
       "tomato": "https://static01.nyt.com/images/2021/06/09/dining/07watermelonrex/merlin_188346429_09300964-0f19-44d9-b4fe-65f4595fa7ef-articleLarge.jpg"
     },
     "wine_img": "https://images.squarespace-cdn.com/content/v1/5c544d689d41490b01536516/1549969004123-UZ980AG6T53788JL9YD0/rose.png",
-    "next_wine": "Cabernet"
+    "next_wine": "Cabernet",
+    "type": "rose"
   },
   "4": {
     "wine_name": "Cabernet",
@@ -41,7 +44,8 @@
       "mushroom risotto": "https://static01.nyt.com/images/2024/01/10/multimedia/10Risotto-gcmz/10Risotto-gcmz-master768.jpg?w=1280&q=75"
     },
     "wine_img": "https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Drinks-PNG-/Red_Wine_Glass_Transparent_PNG_Image.png?m=1629831303",
-    "next_wine": "Moscato"
+    "next_wine": "Moscato",
+    "type": "red"
   },
   "5": {
     "wine_name": "Moscato",
@@ -52,7 +56,8 @@
       "spicy Asian cuisines": "https://static01.nyt.com/images/2016/08/22/dining/22COOKING-KOREAN-RICE-CAKES2/22COOKING-KOREAN-RICE-CAKES2-master768.jpg?w=1280&q=75"
     },
     "wine_img": "https://png.pngtree.com/png-vector/20230830/ourmid/pngtree-glass-of-white-wine-png-image_9202237.png",
-    "next_wine": "Sauvignon Blanc"
+    "next_wine": "Sauvignon Blanc",
+    "type": "white"
   },
   "6": {
     "wine_name": "Sauvignon Blanc",
@@ -63,7 +68,8 @@
       "herb-based dishes": "https://static01.nyt.com/images/2022/09/08/dining/as-herby-tofu/as-herby-tofu-master768.jpg?w=1280&q=75"
     },
     "wine_img": "https://www.totalwine.com/dynamic/490x/media/sys_master/twmmedia/h07/h83/8818737020958.png",
-    "next_wine": "Champagne"
+    "next_wine": "Champagne",
+    "type": "white"
   },
   "7": {
     "wine_name": "Champagne",
@@ -74,7 +80,8 @@
       "fried potatoes": "https://static01.nyt.com/images/2018/09/16/magazine/16mag-eat/16mag-eat-master768.png?w=1280&q=75"
     },
     "wine_img": "https://pics.clipartpng.com/Champagne_Glass_PNG_Clipart-149.png",
-    "next_wine": "Malbec"
+    "next_wine": "Malbec",
+    "type": "sparkling"
   },
   "8": {
     "wine_name": "Malbec",
@@ -85,7 +92,8 @@
       "pork": "https://static01.nyt.com/images/2023/04/11/multimedia/AS-Harissa-Honey-Pork-Tenderloin-bjfm/AS-Harissa-Honey-Pork-Tenderloin-bjfm-master768.jpg?w=1280&q=75"
     },
     "wine_img": "https://cdn.pixabay.com/photo/2017/01/11/22/54/glass-of-wine-1973136_1280.png",
-    "next_wine": "Shiraz"
+    "next_wine": "Shiraz",
+    "type": "red"
   },
   "9": {
     "wine_name": "Shiraz",
@@ -96,7 +104,8 @@
       "chili": "https://static01.nyt.com/images/2019/01/09/dining/sd-slow-cooker-chili/sd-slow-cooker-chili-master768.jpg?w=1280&q=75"
     },
     "wine_img": "https://static.vecteezy.com/system/resources/previews/026/773/765/non_2x/wine-glass-with-ai-generated-free-png.png",
-    "next_wine": "Zinfandel"
+    "next_wine": "Zinfandel",
+    "type": "red"
   },
   "10": {
     "wine_name": "Zinfandel",
@@ -107,7 +116,8 @@
       "chocolate cake": "https://static01.nyt.com/images/2023/10/27/multimedia/27cakerex-plzm/27cakerex-plzm-articleLarge.jpg"
     },
     "wine_img": "https://png.pngtree.com/png-vector/20230830/ourmid/pngtree-glass-of-red-wine-png-image_9196576.png",
-    "next_wine": "Pinot Noir"
+    "next_wine": "Pinot Noir",
+    "type": "red"
   }
 }
 
