@@ -85,7 +85,7 @@ body {
     padding: 50px;
     font-size: large;
     line-height: 2;
-
+    position: relative;
 }
 
 .image-container {
@@ -101,7 +101,6 @@ body {
     display: inline-block; /* Makes the container fit the size of the image */
 }
 
-
 .hover-text {
     position: absolute;
     top: 10%; /* Center vertically */
@@ -116,11 +115,19 @@ body {
 }
 
 .image-container-blank:hover .hover-text {
-    display: block; /* Show the text box on hover */
+    display: block;
 }
 
 .image-container-blank:hover {
     cursor: pointer;
+}
+
+#reset-btn {
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .next-button {
@@ -164,14 +171,15 @@ body {
 }
 
 .body-font {
-    font-family: 'Inter', sans-serif;
+    font-family: "Gill Sans";
+    line-height: 2;
 }
 
 .wine-glass {
     max-width: 200px;
-    max-height: 200px;
+    /*max-height: 200px;*/
     width: auto;
-    height: auto;
+    height: 200px;
 }
 
 .dimmed {
@@ -184,16 +192,27 @@ body {
     gap: 90px 10px;
 }
 
-.title-container {
-    padding: 10px;
-    border: 1px solid #ccc;
-    box-shadow: 0 2px 12px rgba(0.0.0.0.1);
-    display: inline-block;
-    position: absolute;
+.bottom-left {
     bottom: 20px;
-    left: 250px;
-    color: floralwhite;
-    z-index: 10;
+    left: 20px;
+}
+
+.top-right {
+    right: 20px;
+    top: 20px;
+}
+
+.learning-text {
     font-family: "Gill Sans";
     color: black;
+    font-size: 15px;
+    padding: 5px;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+    display: flex;
+    position: absolute;
+    z-index: 10;
+    align-items: center;
+    justify-content: center;
+    background-color: floralwhite;
 }

@@ -1,12 +1,14 @@
 {% extends "layout.html" %}
 {% block content %}
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="{{ url_for('static', filename='modalManager.js') }}"></script>
     <div class="content-container">
         <div class="backgroundcolor">
             <div class="content-container learn-backgroundcolor">
-                <div id='wine-display' class="row">
-                </div>
+                <button class="learning-text top-right" id="reset-btn">Reset<i class="material-icons">refresh</i></button>
+                <div id='wine-display' class="row"></div>
+                <div class="learning-text bottom-left">Click on a wine glass to learn more</div>
             </div>
         </div>
     </div>
@@ -55,7 +57,4 @@
         {% endfor %}
     </div>
 
-    <div class="title-container">
-        Click on a wine glass to learn more
-    </div>
 {% endblock %}

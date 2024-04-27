@@ -71,6 +71,11 @@ def mark_as_seen(wine_id):
     wines[wine_id]['seen'] = True
     return jsonify(wines)
 
+@app.route('/mark_as_unseen/<wine_id>')
+def mark_as_unseen(wine_id):
+    wines[wine_id]['seen'] = False
+    return jsonify(wines)
+
 @app.route('/learn/<wine_num>')
 def learn(wine_num):
     wine_to_render = wines[wine_num]
@@ -102,7 +107,7 @@ def record_time():
     if user_learn_info['time_started'] is None and 'time_started' in json_data:
         user_learn_info['time_started'] = json_data['time_started']
 
-    return jsonify({'redirect': url_for('learn', wine_num='1'), 'time_started': user_learn_info['time_started']})
+    return jsonify({'redirect': url_for('all_wines'), 'time_started': user_learn_info['time_started']})
 
 
 @app.route('/submit_quiz', methods=['POST'])
