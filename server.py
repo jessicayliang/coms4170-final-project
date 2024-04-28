@@ -106,6 +106,8 @@ def record_time():
 
     if user_learn_info['time_started'] is None and 'time_started' in json_data:
         user_learn_info['time_started'] = json_data['time_started']
+    elif 'time_finished' in json_data:
+        user_learn_info['time_started'] = json_data['time_finished']
 
     return jsonify({'redirect': url_for('all_wines'), 'time_started': user_learn_info['time_started']})
 

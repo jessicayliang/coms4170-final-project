@@ -7,7 +7,7 @@ $(document).ready(() => {
     $("#to_quiz_modal").modal({show: false});
 
     // add an event listener for every modal in which it checks to trigger end of lesson on close
-    $('#modal-container .modal').on('hidden.bs.modal', function() {
+    $('#modal-container .modal').on('hidden.bs.modal', function () {
         // console.log('Modal closed. Total seen:', num_seen);
         if (num_seen >= 10 && doSuccessPopup) {
             openSuccessModal();
@@ -19,8 +19,9 @@ $(document).ready(() => {
     $('#reset-btn').on('click', function () {
         markAllWineAsUnseen()
         $("#quiz-btn-holder").empty()
-        doSuccessPopup = true
+        // doSuccessPopup = true
         num_seen = 0;
+        refreshAllImages()
     });
 
     function refreshAllImages() {
@@ -57,7 +58,12 @@ $(document).ready(() => {
                 $('.modal-trigger').on('click', (event) => {
                     markWineAsSeen($(event.currentTarget).find('img').attr('data-wine-id'));
                 });
-
+                if (num_seen === 10 && !doSuccessPopup) {
+                    console.log('appending')
+                    $("#quiz-btn-holder").empty().append("<button class='btn btn-success'>To quiz</button>").click(function () {
+                        window.location.href = './quiz/1'
+                    })
+                }
             },
             error: function (error) {
                 console.error("Error fetching wines:", error);
@@ -125,8 +131,14 @@ $(document).ready(() => {
         doSuccessPopup = false
         $("#quiz-btn-holder").empty()
         $("#to_quiz_modal").modal('show').on('hidden.bs.modal', function () {
-            $("#quiz-btn-holder").empty().append("<button class='btn btn-success'>To quiz</button>")
+            $("#quiz-btn-holder").empty().append("<button class='btn btn-success'>To quiz</button>").click(function () {
+                window.location.href = './quiz/1'
+            })
         });
+
+        $("#btn-to-quiz").click(function () {
+            window.location.href = './quiz/1'
+        })
 
         confetti();
     }
