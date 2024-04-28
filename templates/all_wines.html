@@ -1,14 +1,21 @@
 {% extends "layout.html" %}
 {% block content %}
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="{{ url_for('static', filename='modalManager.js') }}"></script>
     <div class="content-container">
         <div class="backgroundcolor">
             <div class="content-container learn-backgroundcolor">
-                <button class="learning-text top-right" id="reset-btn">Reset<i class="material-icons">refresh</i></button>
+                <div class="d-flex justify-content-end">
+                    <button class="learning-text top-right" id="reset-btn">Reset<i class="material-icons">refresh</i>
+                    </button>
+                </div>
                 <div id='wine-display' class="row"></div>
-                <div class="learning-text bottom-left">Click on a wine glass to learn more</div>
+                <div class="row d-flex justify-content-between">
+                    <div class="learning-text bottom-left">Click on a wine glass to learn more</div>
+                    <div id="quiz-btn-holder"></div>
+                </div>
             </div>
         </div>
     </div>
@@ -36,7 +43,7 @@
                                         {{ details['description'] }}
                                     </div>
                                 </div>
-                            <br/>
+                                <br/>
                                 <div class="row">
                                     {% for pairing, img in details['pairs_with'].items() %}
                                         <div class="col">
@@ -55,6 +62,33 @@
                 </div>
             </div>
         {% endfor %}
+
+    </div>
+    <div class="modal fade" id="to_quiz_modal" tabindex="-1" role="dialog"
+         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered" style="width: 90%" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Lesson finished!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                        <p>Congrats! You've finished the lesson. Ready to test what you've learned?</p>
+                    </div>
+                </div>
+                <br>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Back to lesson</button>
+
+                    <button id="btn-to-quiz" type="button" class="btn btn-success" data-dismiss="modal">To quiz
+                    </button>
+                </div>
+            </div>
+
+        </div>
     </div>
 
 {% endblock %}

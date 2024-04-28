@@ -189,7 +189,8 @@ body {
 
 #wine-display{
     justify-content: center;
-    gap: 90px 10px;
+    gap: 80px 10px;
+    padding: 15px;
 }
 
 .bottom-left {
@@ -210,7 +211,6 @@ body {
     border: 1px solid #ccc;
     box-shadow: 0 2px 12px rgba(0,0,0,0.1);
     display: flex;
-    position: absolute;
     z-index: 10;
     align-items: center;
     justify-content: center;

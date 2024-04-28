@@ -1,18 +1,30 @@
 // file for managing the popups for modals, as well as the wine image dimming
 let wines;
-
+let num_seen = 0;
+let doSuccessPopup = true
 $(document).ready(() => {
-    let num_seen = 0;
+
+    $("#to_quiz_modal").modal({show: false});
+
+    // add an event listener for every modal in which it checks to trigger end of lesson on close
+    $('#modal-container .modal').on('hidden.bs.modal', function() {
+        // console.log('Modal closed. Total seen:', num_seen);
+        if (num_seen >= 10 && doSuccessPopup) {
+            openSuccessModal();
+        }
+    });
+
     refreshAllImages();
 
-    $('#reset-btn').on('click', function(){
+    $('#reset-btn').on('click', function () {
         markAllWineAsUnseen()
+        $("#quiz-btn-holder").empty()
+        doSuccessPopup = true
         num_seen = 0;
     });
 
     function refreshAllImages() {
         console.log('refreshing all')
-        num_seen = 0
         $("#wine-display").empty()
         $.ajax({
             url: '/getwines',  // Endpoint returning JSON array of wines
@@ -20,10 +32,11 @@ $(document).ready(() => {
             contentType: 'application/json',
             success: function (response) {
                 // Assuming 'response' is an object where keys are wine_ids and values are wine details
+                num_seen = 0
                 $.each(response, function (wine_num, details) {
                     // console.log(details['seen'])
-                    if(details['seen'] == true){
-                        num_seen += 1;
+                    if (details['seen']) {
+                        num_seen++;
                     }
                     let imgClass = details['seen'] ? 'img-fluid dimmed' : 'img-fluid';
                     let wineHtml = `
@@ -44,10 +57,6 @@ $(document).ready(() => {
                 $('.modal-trigger').on('click', (event) => {
                     markWineAsSeen($(event.currentTarget).find('img').attr('data-wine-id'));
                 });
-
-                if(num_seen == 10){
-                    console.log('finished lesson');
-                }
 
             },
             error: function (error) {
@@ -94,7 +103,7 @@ $(document).ready(() => {
         })
     }
 
-    function markAllWineAsUnseen(){
+    function markAllWineAsUnseen() {
         $.ajax({
             url: '/getwines',  // Endpoint returning JSON array of wines
             type: 'GET',
@@ -111,5 +120,16 @@ $(document).ready(() => {
             }
         });
     }
+
+    function openSuccessModal() {
+        doSuccessPopup = false
+        $("#quiz-btn-holder").empty()
+        $("#to_quiz_modal").modal('show').on('hidden.bs.modal', function () {
+            $("#quiz-btn-holder").empty().append("<button class='btn btn-success'>To quiz</button>")
+        });
+
+        confetti();
+    }
+
 
 });
