@@ -20,8 +20,6 @@ $(document).ready(() => {
         markAllWineAsUnseen()
         $("#quiz-btn-holder").empty()
         // doSuccessPopup = true
-        num_seen = 0;
-        refreshAllImages()
     });
 
     function refreshAllImages() {
