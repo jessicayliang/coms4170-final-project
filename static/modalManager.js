@@ -3,8 +3,8 @@ let wines;
 let num_seen = 0;
 let doSuccessPopup = true
 $(document).ready(() => {
-
     $("#to_quiz_modal").modal({show: false});
+    countSeen();
 
     // add an event listener for every modal in which it checks to trigger end of lesson on close
     $('#modal-container .modal').on('hidden.bs.modal', function () {
@@ -19,7 +19,7 @@ $(document).ready(() => {
     $('#reset-btn').on('click', function () {
         markAllWineAsUnseen()
         $("#quiz-btn-holder").empty()
-        // doSuccessPopup = true
+        doSuccessPopup = true
     });
 
     function refreshAllImages() {
@@ -139,6 +139,31 @@ $(document).ready(() => {
         })
 
         confetti();
+    }
+
+    function countSeen() {
+        $.ajax({
+            url: '/getwines',  // Endpoint returning JSON array of wines
+            type: 'GET',
+            contentType: 'application/json',
+            success: function (response) {
+                // Assuming 'response' is an object where keys are wine_ids and values are wine details
+                num_seen = 0
+                $.each(response, function (wine_num, details) {
+                    // console.log(details['seen'])
+                    if (details['seen']) {
+                        num_seen++;
+                    }
+                });
+                if(num_seen == 10){
+                    doSuccessPopup = false;
+                }
+            },
+            error: function (error) {
+                console.error("Error fetching wines:", error);
+            }
+        });
+
     }
 
 
