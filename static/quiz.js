@@ -3,6 +3,7 @@ let quizData = {};
 let score = 0;  // Define score variable to keep track of user scores.
 
 document.addEventListener('DOMContentLoaded', () => {
+    updateProgressBar(0, 10)
     fetch('/static/quiz.json')
         .then(response => response.json())
         .then(data => {
@@ -45,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
       event.stopPropagation();
       if (nextQuestionButton.style.display === 'block') {
           console.log("Next question button clicked, current question number before load:", currentQuestionNumber);
+          updateProgressBar(parseInt(currentQuestionNumber, 10), 10)
           if (quizData[currentQuestionNumber] && quizData[currentQuestionNumber].next_question) {
               currentQuestionNumber = quizData[currentQuestionNumber].next_question;
           } else {
@@ -111,4 +113,10 @@ function drag(event) {
 function showResults() {
     console.log(`Final Score: ${score} out of ${Object.keys(quizData).length}`);
     window.location.href = `/results?score=${score}&total_questions=${Object.keys(quizData).length}`;
+}
+
+function updateProgressBar(questionNumber, totalQuestions) {
+    const progressBar = document.querySelector('.progress-bar');
+    const width = (questionNumber / totalQuestions) * 100;
+    progressBar.style.width = `${width}%`;
 }
