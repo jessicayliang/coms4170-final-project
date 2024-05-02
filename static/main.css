@@ -5,11 +5,12 @@ body {
 
 .navbar {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     background-color: #333;
     color: white;
     padding: 10px 20px;
+    width: 100%;
 }
 .navbar-font {
     font-family: "Fraunces", serif;
@@ -52,6 +53,7 @@ body {
     top: 0vh; /* Positions the navbar halfway down the viewport height */
     width: 50%; /* Ensures the navbar stretches across the full width of the viewport */
     z-index: 10;
+    justify-content: flex-end; 
 
 }
 
@@ -89,6 +91,7 @@ body {
 }
 
 .image-container {
+    position: relative;
     background-image: url('https://i.pinimg.com/originals/e0/c5/4c/e0c54c190aa92a697a71d830dd98820f.jpg');
     background-size: cover; /* This will cover the entire area of the container */
     background-position: center center; /* This will center the image in the container */
@@ -98,7 +101,16 @@ body {
 
 .image-container-blank {
     position: relative;
-    display: inline-block; /* Makes the container fit the size of the image */
+    display: inline-block; 
+}
+
+.footer-font {
+    font-family: "Fraunces", serif;
+    font-size: 70px; 
+    font-weight: bold; 
+    color: white;
+    text-shadow: 2px 2px 2px black;
+    
 }
 
 .hover-text {
