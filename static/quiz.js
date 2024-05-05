@@ -3,6 +3,7 @@ let quizData = {};
 let score = 0; // Initialize score
 
 document.addEventListener('DOMContentLoaded', () => {
+    updateProgressBar(0, 10)
     fetch('/static/quiz.json') // Load quiz data from server
         .then(response => response.json())
         .then(data => {
@@ -53,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
     nextQuestionButton.addEventListener('click', function(event) {
         event.preventDefault();
         if (nextQuestionButton.style.display === 'block') {
+            updateProgressBar(parseInt(currentQuestionNumber, 10), 10)
             if (quizData[currentQuestionNumber] && quizData[currentQuestionNumber].next_question) {
                 currentQuestionNumber = quizData[currentQuestionNumber].next_question;
                 loadNextQuestion();
