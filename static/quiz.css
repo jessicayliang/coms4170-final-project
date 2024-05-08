@@ -1,6 +1,7 @@
 .quiz-container {
     display: flex;
     justify-content: space-between;
+    padding: 20px 50px 50px 50px;
 }
 
 .wine-choices {

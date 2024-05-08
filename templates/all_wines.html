@@ -4,18 +4,15 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='main.css') }}">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src="{{ url_for('static', filename='modalManager.js') }}"></script>
-    <div class="content-container">
+    <div class="top-content-container">
         <div class="backgroundcolor">
             <div class="content-container learn-backgroundcolor">
-                <div class="d-flex justify-content-end">
-                    <button class="learning-text top-right" id="reset-btn">Reset<i class="material-icons">refresh</i>
-                    </button>
-                </div>
+                <div class="learning-instructions top-center">Click on a wine glass to learn more</div>
+                <div class="top-right" id="reset-btn"><i class="material-icons">refresh</i></div>
+                <br><br>
                 <div id='wine-display' class="row"></div>
-                <div class="row d-flex justify-content-between">
-                    <div class="learning-text bottom-left">Click on a wine glass to learn more</div>
-                    <div id="quiz-btn-holder"></div>
-                </div>
+                <br>
+                <div class="bottom-right" id="quiz-btn-holder"></div>
             </div>
         </div>
     </div>
@@ -28,7 +25,7 @@
                 <div class="modal-dialog modal-lg modal-dialog-centered" style="width: 90%" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLongTitle">{{ details['wine_name'] }}</h5>
+                            <h5 class="modal-title wine-info-name" id="exampleModalLongTitle">{{ details['wine_name'] }}</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -39,8 +36,8 @@
                                     <div class="col-3">
                                         <img class="wine-glass img-fluid" src="{{ details['wine_img'] }}">
                                     </div>
-                                    <div class="col">
-                                        {{ details['description'] }}
+                                    <div class="col wine-info-text">
+                                        {{ details['description'] | safe }}
                                     </div>
                                 </div>
                                 <br/>

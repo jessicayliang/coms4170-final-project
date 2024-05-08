@@ -80,7 +80,6 @@ def mark_as_unseen(wine_id):
 def learn(wine_num):
     wine_to_render = wines[wine_num]
     wine_to_render['seen'] = True
-
     return render_template('wine_details.html', wine=wine_to_render, next_id=get_next_wine_id(int(wine_num)),
                            prev_id=str(int(wine_num) - 1), curr_id=wine_num)
 

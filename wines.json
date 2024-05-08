@@ -1,7 +1,7 @@
 {
   "1": {
     "wine_name": "Pinot Noir",
-    "description": "A red-wine known for its versatile light body and bright acidity. Its fruity flavor complements the light taste of poultry and pork, while its earthiness works with the fatty texture of salmon.",
+    "description": "Pinot Noir is a red wine known for its versatile, light body and bright acidity. Its fruity flavor complements the light taste of poultry and pork, while its earthiness pairs well with the fatty texture of salmon.",
     "pairs_with": {
       "poultry": "https://static01.nyt.com/images/2023/01/29/multimedia/29EAT-crispy-smashed-chicken-breasts-with-gin-and-sage-wmtk/29EAT-crispy-smashed-chicken-breasts-with-gin-and-sage-wmtk-master768.jpg?w=1280&q=75",
       "pork": "https://static01.nyt.com/images/2023/04/11/multimedia/AS-Harissa-Honey-Pork-Tenderloin-bjfm/AS-Harissa-Honey-Pork-Tenderloin-bjfm-master768.jpg?w=1280&q=75",
@@ -13,7 +13,7 @@
   },
   "2": {
     "wine_name": "Pinot Grigio",
-    "description": "A crisp, light wine known for its green apple and citrus tasting notes. The acidity cuts through the richness of seafood and risotto, while also balances the heat in spicy dishes.",
+    "description": "Pinot Grigio is a crisp, light wine known for its green apple and citrus tasting notes. The acidity cuts through the richness of seafood and risotto, while also balances the heat in spicy dishes.",
     "pairs_with": {
       "seafood": "https://static01.nyt.com/images/2024/02/28/multimedia/LH-seafood-boil-gktl/LH-seafood-boil-gktl-master768.jpg?w=1280&q=75",
       "spicy chicken": "https://static01.nyt.com/images/2021/10/19/dining/as-glazed-chicken/as-glazed-chicken-master768.jpg?w=1280&q=75",
@@ -37,7 +37,7 @@
   },
   "4": {
     "wine_name": "Cabernet",
-    "description": "As one of the world's most renowned red wine grape varieties, Cabernet is full-bodied, fruity, has balanced acidity, and plenty of tannins that make it age-worthy. The tannins cut through the fat of meat, while its earthy taste complements the umami of mushrooms and richness of cheese.",
+    "description": "As one of the world's most renowned red wine grape varieties, Cabernet is full-bodied and fruity, with balanced acidity and plenty of tannins that make it age-worthy. The tannins cut through the fat of meat, while its earthy taste complements the umami of mushrooms and the richness of cheese.",
     "pairs_with": {
       "red meat": "https://static01.nyt.com/images/2022/05/18/dining/14steakrex/18steakrex-articleLarge.jpg",
       "pizza": "https://static01.nyt.com/images/2024/02/07/multimedia/ND-detroit-style-pizza-twpb/ND-detroit-style-pizza-twpb-master768.jpg?w=1280&q=75",
@@ -45,11 +45,12 @@
     },
     "wine_img": "https://gallery.yopriceville.com/var/resizes/Free-Clipart-Pictures/Drinks-PNG-/Red_Wine_Glass_Transparent_PNG_Image.png?m=1629831303",
     "next_wine": "Moscato",
+    "bold_words": ["renowned", "full-bodied", "fruity", "balanced acidity", "tannins", "age-worthy", "earthy", "umami", "richness"],
     "type": "red"
   },
   "5": {
     "wine_name": "Moscato",
-    "description": "Moscato is a light and sweet white wine known for its fragrant and aromatic bouquet, often showcasing notes of orange blossom and honeysuckle. The sweetness cools the flavor of spicy dishes, while simultaneously contrasts the saltiness of Italian dishes.",
+    "description": "Moscato is a light and sweet white wine known for its fragrant and aromatic bouquet, often showcasing notes of orange blossom and honeysuckle. The sweetness cools the flavor of spicy dishes while simultaneously contrasting with the saltiness of Italian dishes.",
     "pairs_with": {
       "desserts": "https://static01.nyt.com/images/2023/10/27/multimedia/27cakerex-plzm/27cakerex-plzm-articleLarge.jpg",
       "classic italian pizza": "https://static01.nyt.com/images/2014/04/09/dining/09JPPIZZA2/09JPPIZZA2-master768-v2.jpg?w=1280&q=75",
@@ -61,7 +62,7 @@
   },
   "6": {
     "wine_name": "Sauvignon Blanc",
-    "description": "This white wine is usually consumed young and known for its fresh, crisp flavors. It complements the lightness of chicken and seafood, as well as dishes based on fresh herbs to enhance the natural flavors.",
+    "description": "This white wine is usually consumed young and is known for its fresh, crisp flavors. It complements the lightness of chicken and seafood, as well as dishes based on fresh herbs to enhance their natural flavors.",
     "pairs_with": {
       "chicken": "https://static01.nyt.com/images/2023/01/29/multimedia/29EAT-crispy-smashed-chicken-breasts-with-gin-and-sage-wmtk/29EAT-crispy-smashed-chicken-breasts-with-gin-and-sage-wmtk-master768.jpg?w=1280&q=75",
       "seafood": "https://static01.nyt.com/images/2024/02/28/multimedia/LH-seafood-boil-gktl/LH-seafood-boil-gktl-master768.jpg?w=1280&q=75",
@@ -73,7 +74,7 @@
   },
   "7": {
     "wine_name": "Champagne",
-    "description": "This sparkling wine is celebrated worldwide for its quality and tradition. With a high acidity and bubbly texture, it acts as the perfect palate cleanser for fatty and greasy foods.",
+    "description": "This sparkling wine is celebrated worldwide for its quality and tradition. With high acidity and a bubbly texture, it serves as the perfect palate cleanser for fatty and greasy foods.",
     "pairs_with": {
       "steak": "https://static01.nyt.com/images/2022/05/18/dining/14steakrex/18steakrex-articleLarge.jpg",
       "fried chicken": "https://static01.nyt.com/images/2020/09/10/dining/mc-nashville-hot-chicken/merlin_154348302_6054d377-9f8a-4a62-80f7-f2faa0efd2d2-master768.jpg?w=1280&q=75",
@@ -85,7 +86,7 @@
   },
   "8": {
     "wine_name": "Malbec",
-    "description": "This wine is known for its dark and intense color, robust tannins, and plummy and blackberry flavor notes. It complements the rich flavors of steak and pork, but also holds up the strong taste of blue cheese.",
+    "description": "This wine is known for its dark and intense color, robust tannins, and plummy and blackberry flavor notes. It complements the rich flavors of steak and pork and also holds up to the strong taste of blue cheese.",
     "pairs_with": {
       "steak": "https://static01.nyt.com/images/2022/05/18/dining/14steakrex/18steakrex-articleLarge.jpg",
       "blue cheese": "https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.tastyeverafter.com%2Fwp-content%2Fuploads%2F2015%2F01%2Fbluecheesewaxpaper.jpg&f=1&nofb=1&ipt=c4d603f4bf2a28e04dcaceeefaca618e47b10cfc38678275e27892cbcc321cbd&ipo=images",
@@ -97,7 +98,7 @@
   },
   "9": {
     "wine_name": "Shiraz",
-    "description": "Shiraz is a bold, spicy wine that features flavors of blackberry, mint and black pepper. With a robust profile, Shiraz complements the flavors of similarly spiced and hearty dishes like brisket, lamb, and chilli.",
+    "description": "Shiraz is a bold, spicy wine that features flavors of blackberry, mint, and black pepper. With a robust profile, Shiraz complements the flavors of similarly spiced and hearty dishes like brisket, lamb, and chili.",
     "pairs_with": {
       "beef brisket": "https://static01.nyt.com/images/2024/04/16/multimedia/16PASSOVERrex1-brisketrex-qvmb/12NATHANrex1-brisketrex-qvmb-master768.jpg?w=1280&q=75",
       "lamb": "https://static01.nyt.com/images/2023/11/20/multimedia/DT-Rosemary-Rack-of-Lamb-hcmw/DT-Rosemary-Rack-of-Lamb-hcmw-articleLarge.jpg",
@@ -109,7 +110,7 @@
   },
   "10": {
     "wine_name": "Zinfandel",
-    "description": "This versatile red wine wine, known for its fruity flavors and bold character, is the perfect complement to a wide range of dishes. Its spice notes pairs with red meats and pizza, while its sweetness complements desserts.",
+    "description": "Zinfandel is a versatile red wine, known for its fruity flavors and bold character, is the perfect complement to a wide range of dishes. Its spicy notes pair with red meats and pizza, while its sweetness complements desserts.",
     "pairs_with": {
       "red meat": "https://static01.nyt.com/images/2022/05/18/dining/14steakrex/18steakrex-articleLarge.jpg",
       "pizza": "https://static01.nyt.com/images/2024/02/07/multimedia/ND-detroit-style-pizza-twpb/ND-detroit-style-pizza-twpb-master768.jpg?w=1280&q=75",
